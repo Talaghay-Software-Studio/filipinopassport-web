@@ -98,20 +98,55 @@ const Countries = [
     { label: "Central Africa Visa Application Guide", value: "https://mrandmrshowe.com/lifestyle-blog/visa-application-guide-central-africa-filipinos" },
 ];
 class Dropdown extends Component {
-
-    
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-3"></div>
-          <div className="col-md-6">
-            <Select options={Countries} />
+    constructor(props) {
+      super(props);
+      this.state = {
+        selectedOption: null,
+      };
+      this.handleSearchClick = this.handleSearchClick.bind(this);
+    }
+  
+    handleSearchClick() {
+      if (this.state.selectedOption) {
+        window.location.href = this.state.selectedOption.value;
+      }
+    }
+  
+    render() {
+      return (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3"></div>
+            <div className="col-md-6">
+              <Select 
+                options={Countries}
+                onChange={(selectedOption) => {
+                  this.setState({ selectedOption });
+                }}
+              />
+              <button 
+                className="search-button"
+                onClick={this.handleSearchClick}
+                style={{ width: '130px', 
+                height: '33px', 
+                borderRadius: '20px', 
+                backgroundColor: '#36ADA8', 
+                color: '#fff', 
+                border: 'none', 
+                cursor: 'pointer', 
+                fontSize: '14px',
+                fontFamily: 'Mulish',
+                marginTop: '8px'
+              }}
+              >
+                SEARCH NOW
+              </button>
+            </div>
+            <div className="col-md-4"></div>
           </div>
-          <div className="col-md-4"></div>
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
-export default Dropdown
+  
+  export default Dropdown;

@@ -62,20 +62,6 @@ return (
     </div>
     <div style={{ zIndex: 2, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '380px', width: '70%', marginBottom: 'auto'}}>
       <Dropdown />
-      <button style={{ 
-    width: '130px', 
-    height: '33px', 
-    borderRadius: '20px', 
-    backgroundColor: '#36ADA8', 
-    color: '#fff', 
-    border: 'none', 
-    cursor: 'pointer', 
-    fontSize: '14px',
-    fontFamily: 'Mulish',
-    marginTop: '8px'
-  }}>
-    SEARCH NOW
-  </button>
     </div>
     <div className="footer" style={{ top: `${height}px`, height: `220px` }}>
   <p style={{ ...footerTitle, position: 'absolute', left: '50%', transform: 'translateX(-50%)', textAlign: 'center', marginBottom: '24px' }}>FilipinoPassport.com</p>
