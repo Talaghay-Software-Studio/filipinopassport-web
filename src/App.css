@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
 }
 
 .App-logo {
@@ -29,7 +30,19 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 24px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
 }
 
 @keyframes App-logo-spin {
@@ -121,13 +134,14 @@ header {
 	padding: 0 2rem;
 	background-color: rgba(0, 0, 0, 0.24);
 	color: var(--textColor);
+  font-size: 1rem;
 }
 
 header div {
   display: flex;
   align-items: center;
   margin-left: auto;
-  margin-right: 10%;
+  margin-right: 15%;
 }
 
 nav {

@@ -13,7 +13,7 @@ function Navbar() {
 
 	return (
 		<header>
-			<h3>FilipinoPassport.com</h3>
+			<h3 style={{fontSize: '24px'}}>FilipinoPassport.com</h3>
 			<div>
 			<nav ref={navRef} style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flex: 1, marginRight: '-250px'}}>
 				<a href="/#">Home</a>
