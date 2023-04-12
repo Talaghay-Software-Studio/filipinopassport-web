@@ -17,8 +17,8 @@ function Navbar() {
 			<div>
 			<nav ref={navRef} style={{display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flex: 1, marginRight: '-250px'}}>
 				<a href="/#">Home</a>
-				<a href="/#">Services</a>
-				<a href="/#">About me</a>
+				<a href="https://mrandmrshowe.com/visa-assistance1">Services</a>
+				<a href="https://mrandmrshowe.com/about-kach">About me</a>
 				<button
 					className="nav-btn nav-close-btn"
 					onClick={showNavbar}>

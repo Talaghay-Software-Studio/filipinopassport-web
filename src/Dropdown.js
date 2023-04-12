@@ -118,10 +118,36 @@ class Dropdown extends Component {
           <div className="row">
             <div className="col-md-3"></div>
             <div className="col-md-6">
-              <Select 
+            <Select 
                 options={Countries}
+                components={{
+                  IndicatorSeparator: () => null
+                }}
+                scroll
+                placeholder={'City or Country'}
                 onChange={(selectedOption) => {
                   this.setState({ selectedOption });
+                }}
+                styles={{
+                  control: (baseStyles, state) => ({
+                    ...baseStyles,
+                    textAlign: 'left', 
+                    width: '264px', 
+                    height: '56px', 
+                    borderRadius: '8px', 
+                    left: '50%',  
+                    transform: 'translateX(-50%)', 
+                    marginBottom: '8px',
+                  }),
+                  menu: (baseStyles) => ({
+                    textAlign: 'left', 
+                    width: '264px', 
+                    borderRadius: '8px', 
+                    backgroundColor: '#fff', 
+                    paddingTop: '16px', 
+                    scrollbarWidth: 'unset'
+                  }),
+                
                 }}
               />
               <button 
