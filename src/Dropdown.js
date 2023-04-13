@@ -145,15 +145,16 @@ class Dropdown extends Component {
                     borderRadius: '8px', 
                     backgroundColor: '#fff', 
                     paddingTop: '16px', 
-                    scrollbarWidth: 'unset'
+                    margin: 'auto',
+                    marginBottom: '8px',
+                    zIndex: 1
                   }),
-                
                 }}
               />
               <button 
                 className="search-button"
                 onClick={this.handleSearchClick}
-                style={{ width: '130px', 
+                style={{ width: '130px',
                 height: '33px', 
                 borderRadius: '20px', 
                 backgroundColor: '#36ADA8', 
@@ -162,7 +163,10 @@ class Dropdown extends Component {
                 cursor: 'pointer', 
                 fontSize: '14px',
                 fontFamily: 'Mulish',
-                marginTop: '8px'
+                marginTop: '8px',
+                marginBottom: '8px',
+                margin: 'auto',
+                zIndex: 0
               }}
               >
                 SEARCH NOW
