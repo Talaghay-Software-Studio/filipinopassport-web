@@ -2,6 +2,15 @@ import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import './App.css'
 import FPLogo from './images/FPLogo.jpg'
+import Select from 'react-select';
+
+const servicesOptions = [
+  { value: 'visa-assistance1', label: 'Visa Assistance' },
+  { value: 'passport-renewal', label: 'Passport Renewal' },
+  { value: 'passport-application', label: 'Passport Application' },
+  { value: 'travel-insurance', label: 'Travel Insurance' },
+  // add more options as needed
+];
 
 function Navbar() {
 	const navRef = useRef();
@@ -16,7 +25,7 @@ function Navbar() {
 		<header>
 			<img 
 			src={FPLogo}
-			alt="your-image-alt-text" 
+			alt="Filipinopassport.com" 
     		style={{
     		  marginRight: '10px', /* space between image and text */
     		  width: '40px',
