@@ -149,6 +149,13 @@ class Dropdown extends Component {
                     marginBottom: '8px',
                     zIndex: 1
                   }),
+                  menuList: styles => {
+                    console.log('menuList:', styles);
+                    return {
+                      ...styles,
+                      maxHeight: 136
+                    };
+                  }
                 }}
               />
               <button 
