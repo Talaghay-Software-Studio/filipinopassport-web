@@ -3,6 +3,8 @@ import React from 'react'
 import { useWindowSize } from "./components/useWindowSize"
 import Navbar from "./NavBar";
 import Dropdown from "./Dropdown"
+import Footer from './Footer';
+
 
 function App() {
   const [width, height] = useWindowSize()
@@ -18,7 +20,6 @@ return (
     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
       <div className="full-screen-rectangle"></div>
     </div>
-    <div className="bg" style={{ width: `${width}px`,height: `${height}px`, zIndex: -2 }}> </div>
     <div>
       <p minFontSize={12} maxFontSize={15} style={{ ...titleStyles, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '120px', textAlign: 'center' }}>Welcome to</p>
       <p style={{ ...headingStyles, position: 'absolute', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>FilipinoPassport.com</p>
@@ -31,6 +32,10 @@ return (
     </div>
     <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '330px', width: '70%', marginBottom: 'auto'}}>
       <Dropdown /> 
+    </div>
+    <div className="bg" style={{ position:'fixed' ,width: '100vw',height: `${height}px`, zIndex: -2,}}> </div>
+    <div style={{ position: 'absolute', left: '0', width: '100vw',top: '950px', bottom: '0px', zIndex: 0}}>
+      <Footer />
     </div>
   </div>
   
