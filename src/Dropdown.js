@@ -150,7 +150,7 @@ class Dropdown extends Component {
                     console.log('menuList:', styles);
                     return {
                       ...styles,
-                      maxHeight: 136
+                      maxHeight: 136,
                     };
                   }
                 }}
@@ -168,7 +168,6 @@ class Dropdown extends Component {
                 fontSize: '14px',
                 fontFamily: 'Mulish',
                 marginTop: '8px',
-                marginBottom: '8px',
                 margin: 'auto',
                 zIndex: 0
               }}
