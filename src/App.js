@@ -11,31 +11,30 @@ function App() {
   const mq = window.matchMedia('(max-width: 1024px)');
   
   return (
-    <div className="App" style={{ width: `${width}px`, height: `${height}px`,}}>
-      <div style={{ position: 'relative', padding: '0', margin: '0'}}>
+    <div className="App" style={{ width: `${width}px`, height: `${height}px` }}>
         <React.Fragment>
           <Navbar />
         </React.Fragment>
-      </div>
       <div style={{ position: 'absolute', zIndex: -1 }}>
         <div className="full-screen-rectangle"></div>
       </div>
-      <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)', }}>
-        <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px'}}>Welcome to</p>
+      <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)' }}>
+        <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px' }}>Welcome to</p>
         <p style={{ ...headingStyles }}>FilipinosPassport.com</p>
         <p style={{ ...descriptionStyles, marginBottom: '56px' }}>
-  Visa Application Services and Travel Guides<br　/>
-  for Philippines Passport Holders
-</p>
-        <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '16px'}}>Where are You Going?</p>
+          Visa Application Services and Travel Guides
+          <br />
+          for Philippines Passport Holders
+        </p>
+        <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '16px' }}>Where are You Going?</p>
       </div>
-      <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '340px', width: '70%', marginBottom: 'auto'}}>
-      <Dropdown /> 
-    </div>
-      <div className="bg" style={{ position:'fixed' ,width: `${width}px`,height: `${height}px`, zIndex: -2,}}> </div>
-      <div style={{ margin: '0', position: 'relative', marginTop: '950px', width: '100vw'}}>
-        <Footer />
+      <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '340px', width: '70%', marginBottom: 'auto' }}>
+        <Dropdown />
       </div>
+      <div className="bg" style={{ position: 'fixed', width: `${width}px`, height: `${height}px`, zIndex: -2 }}></div>
+      <footer style={{ margin: 0, position: 'relative', marginTop: '950px', width: '100vw' }}>
+      <Footer />
+      </footer>
     </div>
   );
 }
