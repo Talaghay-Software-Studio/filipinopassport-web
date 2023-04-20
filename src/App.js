@@ -3,38 +3,41 @@ import React from 'react'
 import { useWindowSize } from "./components/useWindowSize"
 import Navbar from "./NavBar";
 import Dropdown from "./Dropdown"
+import Footer from './Footer';
+
 
 function App() {
   const [width, height] = useWindowSize()
   const mq = window.matchMedia('(max-width: 1024px)');
   
-return (
-  <div className="App" style={{ width: `${width}px`, height: `${height}px`,}}>
-    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',}}>
-      <React.Fragment>
-        <Navbar />
-      </React.Fragment>
-    </div>
-    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
-      <div className="full-screen-rectangle"></div>
-    </div>
-    <div className="bg" style={{ width: `${width}px`,height: `${height}px`, zIndex: -2 }}> </div>
-    <div>
-      <p minFontSize={12} maxFontSize={15} style={{ ...titleStyles, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '120px', textAlign: 'center' }}>Welcome to</p>
-      <p style={{ ...headingStyles, position: 'absolute', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>FilipinoPassport.com</p>
-      <p style={{ ...descriptionStyles, position: 'absolute', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }}>
-        Visa Application Services and Travel Guides for Philippines Passport Holders
-      </p>
-    </div>
-    <div style={{ zIndex: 0, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '300px', margin: '0 auto' }}>
-      <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '8px'}}>Where are You Going?</p>
-    </div>
-    <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '330px', width: '70%', marginBottom: 'auto'}}>
+  return (
+    <div className="App" style={{ width: `${width}px`, height: `${height}px`,}}>
+      <div style={{ position: 'relative', padding: '0', margin: '0'}}>
+        <React.Fragment>
+          <Navbar />
+        </React.Fragment>
+      </div>
+      <div style={{ position: 'absolute', zIndex: -1 }}>
+        <div className="full-screen-rectangle"></div>
+      </div>
+      <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)', }}>
+        <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px'}}>Welcome to</p>
+        <p style={{ ...headingStyles }}>FilipinosPassport.com</p>
+        <p style={{ ...descriptionStyles, marginBottom: '56px' }}>
+  Visa Application Services and Travel Guides<br　/>
+  for Philippines Passport Holders
+</p>
+        <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '16px'}}>Where are You Going?</p>
+      </div>
+      <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '340px', width: '70%', marginBottom: 'auto'}}>
       <Dropdown /> 
     </div>
-  </div>
-  
-);
+      <div className="bg" style={{ position:'fixed' ,width: `${width}px`,height: `${height}px`, zIndex: -2,}}> </div>
+      <div style={{ margin: '0', position: 'relative', marginTop: '950px', width: '100vw'}}>
+        <Footer />
+      </div>
+    </div>
+  );
 }
 
 export default App;
@@ -45,8 +48,6 @@ const titleStyles = {
   fontSize: '16px',
   color: '#FFFFFF',
   lineHeight: '30px',
-  width: '132px',
-  height: '30px',
   transition: 'font-size 0.8s ease-in-out', 
 };
 
@@ -56,7 +57,6 @@ const headingStyles = {
   fontSize: '32px',
   color: '#FFFFFF',
   lineHeight: '46px',
-  width: '458px',
   height: '46px',
   top: '150px',
   transition: 'font-size 0.8s ease-in-out, top 0.8s ease-in-out', 
@@ -69,7 +69,6 @@ const descriptionStyles = {
   color: '#FFFFFF',
   lineHeight: '25px',
   textAlign: 'center',
-  width: '416px',
   height: '50px',
   top: '200px',
   transition: 'font-size 0.8s ease-in-out, top 0.8s ease-in-out', 
