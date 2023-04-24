@@ -15,9 +15,7 @@ function App() {
         <React.Fragment>
           <Navbar />
         </React.Fragment>
-      <div style={{ position: 'absolute', zIndex: -1 }}>
-        <div className="full-screen-rectangle"></div>
-      </div>
+        <div className="full-screen-rectangle" style={{ position: 'fixed', zIndex: -1 }}></div>
       <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)' }}>
         <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px' }}>Welcome to</p>
         <p style={{ ...headingStyles }}>FilipinosPassport.com</p>
