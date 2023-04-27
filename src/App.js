@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react'
 import { useWindowSize } from "./components/useWindowSize"
 import Navbar from "./NavBar";
-import Dropdown from "./Dropdown"
+import Dropdown from "./components/Dropdown"
 import Footer from './Footer';
 
 
