@@ -1,79 +1,81 @@
 import '../App.css';
-import React from 'react'
-import { useWindowSize } from "../components/useWindowSize"
+import React, {useState, useEffect} from 'react'
 import Navbar from "../NavBar";
-import Dropdown from "../components/Dropdown"
 import Footer from '../Footer';
+import Montenegro from '../images/Montenegro.png'
+import Checkout from '../components/Checkout'
 
 function Services() {
-  const [width, height] = useWindowSize()
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 600px)').matches) {
+        setIsSmallScreen(true);
+      } else {
+        setIsSmallScreen(false);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  
+const headingStyles = {
+  fontFamily: 'Mulish',
+  fontWeight: 800,
+  fontSize: isSmallScreen ? '32px' : '40px',
+  color: '#FFFFFF',
+  lineHeight: isSmallScreen ? '32px' : '40px',
+  textAlign: 'justify' ,
+  height: '46px',
+  transition: 'font-size 0.3s ease-in-out, lineHeight 0.8s ease-in-out', 
+};
+
+const descriptionStyles = {
+  fontFamily: 'Mulish',
+  fontWeight: 300,
+  fontSize: isSmallScreen ? '14px' : '16px',
+  color: '#FFFFFF',
+  textAlign: 'justify',
+  transition: 'font-size 0.3s ease-in-out', 
+
+};
+
+const dropdownStyles = {
+  fontFamily: 'Mulish',
+  fontWeight: 1000,
+  fontSize: isSmallScreen ? '32px' : '40px',
+  marginTop: '-20px',
+  color: '#FFFFFF',
+  textAlign: 'justify',
+  transition: 'font-size 0.3s ease-in-out', 
+}
 
   return (
-    <div className="App" style={{ width: `${width}px`, height: `${height}px` }}>
+    <body style={{ 
+      backgroundImage: `url(${Montenegro})`,}}>
+    <div className="App">
     <React.Fragment>
       <Navbar />
     </React.Fragment>
-    <div className="full-screen-rectangle" style={{ position: 'fixed', zIndex: -1 }}></div>
-  <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)' }}>
-    <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px' }}>Welcome to</p>
-    <p style={{ ...headingStyles }}>FilipinosPassport.com</p>
-    <p style={{ ...descriptionStyles, marginBottom: '56px' }}>
-      Visa Application Services and Travel Guides
-      <br />
-      for Philippines Passport Holders
-    </p>
-    <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '16px' }}>Where are You Going?</p>
+    <div className="full-screen-rectangle" style={{backgroundColor: '#36ADA8', opacity: '0.72'}}></div>
+  <div style={{ position: 'absolute',  width: '1000px', textAlign: 'justify', left: '85%', transform: 'translateX(-40%)' }}>
+    <p style={{ ...headingStyles, marginTop: '80px' }}>LET'S NOW BOOK YOUR <br /> RENTAL FLIGHT TICKET</p>
+    <p style={{ ...descriptionStyles, marginTop: '160px' }}> AT A VERY LOW PRICE OF</p>
+    <p style={{ ...dropdownStyles,}}>€30 euro or $35 USD.</p>
   </div>
-  <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '340px', width: '70%', marginBottom: 'auto' }}>
-    <Dropdown />
+  <div style={{left: '75%', transform: 'translateX(-20%)'}}>
+  <Checkout />
   </div>
   <footer style={{ margin: 0, position: 'relative', marginTop: '950px', width: '100vw' }}>
   <Footer />
   </footer>
 </div>
+</body>
   );
 }
 
 export default Services;
 
-const titleStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 700,
-  fontSize: '16px',
-  color: '#FFFFFF',
-  lineHeight: '30px',
-  transition: 'font-size 0.8s ease-in-out', 
-};
-
-const headingStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 800,
-  fontSize: '32px',
-  color: '#FFFFFF',
-  lineHeight: '46px',
-  height: '46px',
-  top: '150px',
-  transition: 'font-size 0.8s ease-in-out, top 0.8s ease-in-out', 
-};
-
-const descriptionStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 500,
-  fontSize: '16px',
-  color: '#FFFFFF',
-  lineHeight: '25px',
-  textAlign: 'center',
-  height: '50px',
-  top: '200px',
-  transition: 'font-size 0.8s ease-in-out, top 0.8s ease-in-out', 
-};
-
-const dropdownStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 700,
-  fontSize: '20px',
-  color: '#FFFFFF',
-  lineHeight: '25px',
-  textAlign: 'center',
-  top: '20px'
-}

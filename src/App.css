@@ -8,7 +8,6 @@
 }
 
 body {
-  background-image: url(./images/Flags_Background.jpg);
   position: absolute;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -16,7 +15,17 @@ body {
   background-size: cover;
   background-repeat: no-repeat; 
   background-attachment: fixed;
+  z-index: -2;
+}
 
+
+.full-screen-rectangle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1; /* Set this to a higher value than other elements on the page to make sure it covers everything */
 }
 
 footer{
@@ -68,16 +77,6 @@ footer{
   }
 }
 
-.full-screen-rectangle {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #000; /* Change this to the desired color */
-  opacity: 0.16;
-  z-index: 9999; /* Set this to a higher value than other elements on the page to make sure it covers everything */
-}
 
 @font-face {
   font-family: Mulish;
@@ -190,6 +189,10 @@ header .nav-btn {
 	font-size: 1.8rem;
 }
 
+p {
+  font-size: 24px;
+}
+
 @media only screen and (max-width: 1024px) {
 	header .nav-btn {
 		visibility: visible;
@@ -232,6 +235,8 @@ header .nav-btn {
 	nav a {
 		font-size: 1.5rem;
 	}
+
+  
 }
 
 style.css

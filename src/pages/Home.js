@@ -4,23 +4,23 @@ import { useWindowSize } from "../components/useWindowSize"
 import Navbar from "../NavBar";
 import Dropdown from "../components/Dropdown"
 import Footer from '../Footer';
-import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Services from './Services';
+import Flags_Background from '../images/Flags_Background.jpg'
 
 
 function Home() {
   const [width, height] = useWindowSize()
-  const mq = window.matchMedia('(max-width: 1024px)');
   
   return (
-    <div className="App" style={{ width: `${width}px`, height: `${height}px` }}>
+    <body style={{ 
+        backgroundImage: `url(${Flags_Background})`,}}>
+    <div className="App">
         <React.Fragment>
           <Navbar />
         </React.Fragment>
-        <div className="full-screen-rectangle" style={{ position: 'fixed', zIndex: -1 }}></div>
+        <div className="full-screen-rectangle" style={{backgroundColor: '#00000', opacity: '0.16'}}></div>
       <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)' }}>
         <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px' }}>Welcome to</p>
-        <p style={{ ...headingStyles }}>FilipinosPassport.com</p>
+        <p style={{ ...headingStyles }}>FilipinoPassport.com</p>
         <p style={{ ...descriptionStyles, marginBottom: '56px' }}>
           Visa Application Services and Travel Guides
           <br />
@@ -36,10 +36,17 @@ function Home() {
       <Footer />
       </footer>
     </div>
+    </body>
   );
 }
 
 export default Home;
+
+const bgStyle = {
+    position: 'fixed',
+    backgroundSize: 'cover',
+    zIndex: 3
+  };
 
 const titleStyles = {
   fontFamily: 'Mulish',
