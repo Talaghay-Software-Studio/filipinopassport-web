@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -14,6 +15,7 @@ import PaymentForm from './PaymentForm';
 import Review from './Review';
 
 const steps = ['Traveler Information', 'Payment Methods', 'Order Confirmation'];
+
 
 function getStepContent(step) {
   switch (step) {
@@ -42,10 +44,24 @@ const theme = createTheme({
     subtitle1: {
       fontSize: '0.875rem',
     },
+    status: {
+      danger: '#e53e3e',
+    },
+    palette: {
+      primary: {
+        main: '#36ADA8',
+        darker: '#36ADA8',
+      },
+      neutral: {
+        main: '#36ADA8',
+        contrastText: '#fff',
+      },
+    },
   },
 });
 
 export default function Checkout() {
+  const [paymentDetails, setPaymentDetails] = useState({});
   const [activeStep, setActiveStep] = React.useState(0);
 
   const handleNext = () => {
@@ -57,29 +73,39 @@ export default function Checkout() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
       <CssBaseline />
-      <Container component="main" maxWidth="xs">
-        <Paper variant="outlined" sx={{ p: 2 }}>
-          <Typography component="h1" variant="h4" align="center">
-            Step 1: Fill up the request form
-          </Typography>
-          <Stepper activeStep={activeStep} sx={{ pt: 2 }}>
+      <Container component="main" maxWidth="xs"  >
+        <Paper elevation={12} variant="outlined" align="center" sx={{ p: 2, 
+    marginTop: 8, }}>
+        <Box
+  sx={{
+    width: 350,
+    height: 50,
+    backgroundColor: 'orangered',
+    marginTop: -5,
+    borderRadius: 4,
+    paddingTop: 1
+  }}> 
+  <Typography component="h3" variant="h5" align="center" color={'white'} >
+  Flight Rental Reservation
+  </Typography>
+  </Box>
+          
+          <Stepper activeStep={activeStep} sx={{ pt: 2 }} gutter>
             {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
+              <Step key={label} >
+                <StepLabel >{label}</StepLabel>
               </Step>
             ))}
           </Stepper>
           {activeStep === steps.length ? (
             <React.Fragment>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom marginTop={2}>
                 Thank you for your order.
               </Typography>
-              <Typography variant="subtitle1">
-                Your order number is #2001539. We have emailed your order
-                confirmation, and will send you an update when your order has
-                shipped.
+              <Typography variant="body2" gutterBottom>
+              You will receive an email confirmation from our team member or the travel agency,if not please send a follow up email to help@filipinopassport.com to assist you.
               </Typography>
             </React.Fragment>
           ) : (
@@ -87,7 +113,7 @@ export default function Checkout() {
               {getStepContent(activeStep)}
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
                 {activeStep !== 0 && (
-                  <Button onClick={handleBack}>
+                  <Button onClick={handleBack} sx={{ ml: 2, color: '#36ADA8',}}>
                     Back
                   </Button>
                 )}
@@ -95,9 +121,9 @@ export default function Checkout() {
                 <Button
                   variant="contained"
                   onClick={handleNext}
-                  sx={{ ml: 2 }}
+                  sx={{ ml: 2, color: '#fff', bgcolor: '#36ADA8' }}
                 >
-                  {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                  {activeStep === steps.length - 1 ? 'Done' : 'Next'}
                 </Button>
               </Box>
             </React.Fragment>

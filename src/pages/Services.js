@@ -54,26 +54,29 @@ const dropdownStyles = {
 }
 
   return (
-    <body style={{ 
-      backgroundImage: `url(${Montenegro})`,}}>
     <div className="App">
+    <div style={{ 
+      zIndex: -2,
+      backgroundImage: `url(${Montenegro})`,
+      backgroundSize: 'cover',
+      width: '100vw',
+      position: 'absolute' }} />
     <React.Fragment>
       <Navbar />
     </React.Fragment>
-    <div className="full-screen-rectangle" style={{backgroundColor: '#36ADA8', opacity: '0.72'}}></div>
+    <div className="full-screen-rectangle" style={{backgroundColor: '#36ADA8', opacity: '0.72', zIndex: -1,}}></div>
   <div style={{ position: 'absolute',  width: '1000px', textAlign: 'justify', left: '85%', transform: 'translateX(-40%)' }}>
     <p style={{ ...headingStyles, marginTop: '80px' }}>LET'S NOW BOOK YOUR <br /> RENTAL FLIGHT TICKET</p>
     <p style={{ ...descriptionStyles, marginTop: '160px' }}> AT A VERY LOW PRICE OF</p>
     <p style={{ ...dropdownStyles,}}>€30 euro or $35 USD.</p>
   </div>
-  <div style={{left: '75%', transform: 'translateX(-20%)'}}>
+  <div style={{ transform: 'translateX(-25%)' }}>
   <Checkout />
   </div>
-  <footer style={{ margin: 0, position: 'relative', marginTop: '950px', width: '100vw' }}>
+  <footer style={{ margin: 0, position: 'relative', marginTop: '50vh', width: '100vw' }}>
   <Footer />
   </footer>
 </div>
-</body>
   );
 }
 

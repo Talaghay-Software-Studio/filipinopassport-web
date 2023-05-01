@@ -1,64 +1,70 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Review from './Review'
+import { FormControl, MenuItem } from '@mui/base';
+import { InputLabel, Select, Input, InputAdornment } from '@mui/material';
+import SelectQuantity from './SelectQuantity';
+import SelectType from './SelectType';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
+
+
 
 export default function PaymentForm() {
+  const [quantity, setQuantity] = React.useState('');
+  const totalAmount = quantity * 30;
+  
   return (
+    
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Payment method
+      <Typography variant="h4" gutterBottom marginTop={2}>
+      Pay via Bank Transfer
+      </Typography>
+      <Typography variant="body1" align='left' gutterBottom>
+      Per Person: €30 ($30 or PHP 1,600 Pesos) for One Way or Return Flight Ticket
+      </Typography>
+      <Typography variant="body1" align='left' gutterBottom> 
+      Expedite Service (within 8 hours): €40 ($40 or Php 2,100) currently sold out
+      </Typography>
+      <Typography variant="body1" align='left' gutterBottom> 
+Additional Leg: €30 ($30 or PHP 1,600 Pesos)
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardName"
-            label="Name on card"
-            fullWidth
-            autoComplete="cc-name"
-            variant="standard"
-          />
+        <Grid item wrap-xs-nowrap xs={12} md={6}>
+      <SelectQuantity quantity={quantity} setQuantity={setQuantity}/>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardNumber"
-            label="Card number"
-            fullWidth
-            autoComplete="cc-number"
-            variant="standard"
-          />
+        <Grid item wrap-xs-nowrap xs={12} md={6}>
+      <SelectType />
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="expDate"
-            label="Expiry date"
-            fullWidth
-            autoComplete="cc-exp"
-            variant="standard"
-          />
+      </Grid>
+      <Grid >
+      <Box sx={{width: '100%', maxWidth: 360, bgcolor: 'white' }}>
+      <Box sx={{ my: 3, mx: 2 }}>
+        <Grid container alignItems="center">
+          <Grid item xs >
+            <Typography gutterBottom variant="h6" component="div">
+              Total
+            </Typography>
+          </Grid>
+          <Grid item xs  >
+            <Typography gutterBottom variant="h4" component="div">
+            {`$${totalAmount}`}
+            </Typography>
+          </Grid>
+          <Box
+  sx={{
+    width: 350,
+    height: 3,
+    backgroundColor: 'darkgray',
+  }}
+/>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-            label="Remember credit card details for next time"
-          />
-        </Grid>
+        <Typography color="text.secondary" variant="body2" marginTop={1}>
+        Kindly ensure that you pay the correct amount of {`$${totalAmount}`} using the payment partners on the next step. Thank you!  
+        </Typography>
+      </Box>
+    </Box>
       </Grid>
     </React.Fragment>
   );
