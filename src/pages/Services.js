@@ -4,6 +4,8 @@ import Navbar from "../NavBar";
 import Footer from '../Footer';
 import Montenegro from '../images/Montenegro.png'
 import Checkout from '../components/Checkout'
+import { Box, Grid, Paper } from '@mui/material';
+
 
 function Services() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -25,9 +27,9 @@ function Services() {
 const headingStyles = {
   fontFamily: 'Mulish',
   fontWeight: 800,
-  fontSize: isSmallScreen ? '32px' : '40px',
+  fontSize: isSmallScreen ? '48px' : '56px',
   color: '#FFFFFF',
-  lineHeight: isSmallScreen ? '32px' : '40px',
+  lineHeight: isSmallScreen ? '40px' : '48px',
   textAlign: 'justify' ,
   height: '46px',
   transition: 'font-size 0.3s ease-in-out, lineHeight 0.8s ease-in-out', 
@@ -36,7 +38,7 @@ const headingStyles = {
 const descriptionStyles = {
   fontFamily: 'Mulish',
   fontWeight: 300,
-  fontSize: isSmallScreen ? '14px' : '16px',
+  fontSize: isSmallScreen ? '20px' : '24px',
   color: '#FFFFFF',
   textAlign: 'justify',
   transition: 'font-size 0.3s ease-in-out', 
@@ -46,7 +48,7 @@ const descriptionStyles = {
 const dropdownStyles = {
   fontFamily: 'Mulish',
   fontWeight: 1000,
-  fontSize: isSmallScreen ? '32px' : '40px',
+  fontSize: isSmallScreen ? '40px' : '48px',
   marginTop: '-20px',
   color: '#FFFFFF',
   textAlign: 'justify',
@@ -55,29 +57,41 @@ const dropdownStyles = {
 
   return (
     <div className="App">
-    <div style={{ 
-      zIndex: -2,
-      backgroundImage: `url(${Montenegro})`,
-      backgroundSize: 'cover',
-      width: '100vw',
-      position: 'absolute' }} />
-    <React.Fragment>
-      <Navbar />
-    </React.Fragment>
-    <div className="full-screen-rectangle" style={{backgroundColor: '#36ADA8', opacity: '0.72', zIndex: -1,}}></div>
-  <div style={{ position: 'absolute',  width: '1000px', textAlign: 'justify', left: '85%', transform: 'translateX(-40%)' }}>
-    <p style={{ ...headingStyles, marginTop: '80px' }}>LET'S NOW BOOK YOUR <br /> RENTAL FLIGHT TICKET</p>
-    <p style={{ ...descriptionStyles, marginTop: '160px' }}> AT A VERY LOW PRICE OF</p>
-    <p style={{ ...dropdownStyles,}}>€30 euro or $35 USD.</p>
-  </div>
-  <div style={{ transform: 'translateX(-25%)' }}>
-  <Checkout />
-  </div>
-  <footer style={{ margin: 0, position: 'relative', marginTop: '50vh', width: '100vw' }}>
-  <Footer />
-  </footer>
-</div>
-  );
+      <React.Fragment>
+        <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}} >
+          <Box sx={{
+          width: '100%',
+          height: '100vh',
+          bgcolor: 'black',
+          opacity: [1, 1, 1],
+          marginBottom: '25vh',
+          backgroundImage: `url(${Montenegro})`,
+          backgroundSize: 'cover',
+        }}
+      >
+          <Grid item width={'100vw'}>
+            <Navbar />
+          </Grid>
+          <Grid item>
+          <p style={{ ...headingStyles, marginTop: '64px', marginBottom: '1px' }}>Welcome to</p>
+        <p style={{ ...descriptionStyles, marginTop: '24px' }}>FilipinoPassport.com</p>
+        <p style={{ ...dropdownStyles, marginTop: '24px',marginBottom: '64px' }}>
+          Visa Application Services and Travel Guides
+          <br />
+          for Philippines Passport Holders
+        </p>
+          </Grid>
+          <Grid item>
+            <Checkout />
+          </Grid>
+          </Box>
+          <Grid item >
+            <Footer />
+          </Grid>
+        </Grid>
+      </React.Fragment>
+    </div>
+  )
 }
 
 export default Services;

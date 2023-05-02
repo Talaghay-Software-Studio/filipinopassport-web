@@ -71,7 +71,7 @@ export default function Review() {
           Two Monkey Tours
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          Account #: 9789604573
+          Scan the Paypal QR
           </Typography>
         </CardContent>
       </CardActionArea>

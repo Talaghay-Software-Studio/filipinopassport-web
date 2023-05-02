@@ -5,39 +5,54 @@ import Navbar from "../NavBar";
 import Dropdown from "../components/Dropdown"
 import Footer from '../Footer';
 import Flags_Background from '../images/Flags_Background.jpg'
+import { Box, Grid, Paper } from '@mui/material';
+import { positions } from '@mui/system';
+
+
 
 
 function Home() {
   const [width, height] = useWindowSize()
   
   return (
-    <body style={{ 
-        backgroundImage: `url(${Flags_Background})`,}}>
     <div className="App">
-        <React.Fragment>
-          <Navbar />
-        </React.Fragment>
-        <div className="full-screen-rectangle" style={{backgroundColor: '#00000', opacity: '0.16'}}></div>
-      <div style={{ position: 'absolute', textAlign: 'center', left: '50%', transform: 'translateX(-50%)' }}>
-        <p style={{ ...titleStyles, marginTop: '56px', marginBottom: '1px' }}>Welcome to</p>
-        <p style={{ ...headingStyles }}>FilipinoPassport.com</p>
-        <p style={{ ...descriptionStyles, marginBottom: '56px' }}>
+      <React.Fragment>
+        <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}} >
+          <Box sx={{
+          width: '100%',
+          height: '100vh',
+          bgcolor: 'black',
+          opacity: [1, 1, 1],
+          marginBottom: '25vh',
+          backgroundImage: `url(${Flags_Background})`,
+          backgroundSize: 'cover',
+        }}
+      >
+          <Grid item width={'100vw'}>
+            <Navbar />
+          </Grid>
+          <Grid item>
+          <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Welcome to</p>
+        <p style={{ ...headingStyles, marginTop: '24px' }}>FilipinoPassport.com</p>
+        <p style={{ ...descriptionStyles, marginTop: '24px',marginBottom: '64px' }}>
           Visa Application Services and Travel Guides
           <br />
           for Philippines Passport Holders
         </p>
-        <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '16px' }}>Where are You Going?</p>
-      </div>
-      <div style={{ zIndex: 1, position: 'absolute', left: '50%', transform: 'translateX(-50%)', top: '340px', width: '70%', marginBottom: 'auto' }}>
-        <Dropdown />
-      </div>
-      <div className="bg" style={{ position: 'fixed', width: `${width}px`, height: `${height}px`, zIndex: -2 }}></div>
-      <footer style={{ margin: 0, position: 'relative', marginTop: '950px', width: '100vw' }}>
-      <Footer />
-      </footer>
+        <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '8px' }}>Where are You Going?</p>
+          </Grid>
+          <Grid item>
+            <Dropdown />
+          </Grid>
+          </Box>
+          <Grid item >
+            <Footer />
+          </Grid>
+        </Grid>
+      </React.Fragment>
     </div>
-    </body>
-  );
+  )
+  
 }
 
 export default Home;
@@ -50,8 +65,8 @@ const bgStyle = {
 
 const titleStyles = {
   fontFamily: 'Mulish',
-  fontWeight: 700,
-  fontSize: '16px',
+  fontWeight: 400,
+  fontSize: '24px',
   color: '#FFFFFF',
   lineHeight: '30px',
   transition: 'font-size 0.8s ease-in-out', 
@@ -59,8 +74,8 @@ const titleStyles = {
 
 const headingStyles = {
   fontFamily: 'Mulish',
-  fontWeight: 800,
-  fontSize: '32px',
+  fontWeight: 700,
+  fontSize: '48px',
   color: '#FFFFFF',
   lineHeight: '46px',
   height: '46px',
@@ -70,8 +85,8 @@ const headingStyles = {
 
 const descriptionStyles = {
   fontFamily: 'Mulish',
-  fontWeight: 500,
-  fontSize: '16px',
+  fontWeight: 400,
+  fontSize: '20px',
   color: '#FFFFFF',
   lineHeight: '25px',
   textAlign: 'center',
@@ -82,8 +97,8 @@ const descriptionStyles = {
 
 const dropdownStyles = {
   fontFamily: 'Mulish',
-  fontWeight: 700,
-  fontSize: '20px',
+  fontWeight: 500,
+  fontSize: '24px',
   color: '#FFFFFF',
   lineHeight: '25px',
   textAlign: 'center',
