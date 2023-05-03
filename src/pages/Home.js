@@ -13,9 +13,10 @@ import { positions } from '@mui/system';
 
 function Home() {
   const [width, height] = useWindowSize()
-  
+
+
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(${Flags_Background})`, zIndex: 9}}>
       <React.Fragment>
         <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}} >
           <Box sx={{
@@ -24,8 +25,6 @@ function Home() {
           bgcolor: 'black',
           opacity: [1, 1, 1],
           marginBottom: '25vh',
-          backgroundImage: `url(${Flags_Background})`,
-          backgroundSize: 'cover',
         }}
       >
           <Grid item width={'100vw'}>
@@ -45,7 +44,7 @@ function Home() {
             <Dropdown />
           </Grid>
           </Box>
-          <Grid item >
+          <Grid item width={'100vw'}>
             <Footer />
           </Grid>
         </Grid>
@@ -66,7 +65,7 @@ const bgStyle = {
 const titleStyles = {
   fontFamily: 'Mulish',
   fontWeight: 400,
-  fontSize: '24px',
+  fontSize: '20px',
   color: '#FFFFFF',
   lineHeight: '30px',
   transition: 'font-size 0.8s ease-in-out', 
@@ -75,7 +74,7 @@ const titleStyles = {
 const headingStyles = {
   fontFamily: 'Mulish',
   fontWeight: 700,
-  fontSize: '48px',
+  fontSize: '32px',
   color: '#FFFFFF',
   lineHeight: '46px',
   height: '46px',
@@ -86,7 +85,7 @@ const headingStyles = {
 const descriptionStyles = {
   fontFamily: 'Mulish',
   fontWeight: 400,
-  fontSize: '20px',
+  fontSize: '18px',
   color: '#FFFFFF',
   lineHeight: '25px',
   textAlign: 'center',

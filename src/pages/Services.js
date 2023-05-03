@@ -12,7 +12,7 @@ function Services() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.matchMedia('(max-width: 600px)').matches) {
+      if (window.matchMedia('(max-width: 1024px)').matches) {
         setIsSmallScreen(true);
       } else {
         setIsSmallScreen(false);
@@ -48,8 +48,7 @@ const descriptionStyles = {
 const dropdownStyles = {
   fontFamily: 'Mulish',
   fontWeight: 1000,
-  fontSize: isSmallScreen ? '40px' : '48px',
-  marginTop: '-20px',
+  fontSize: isSmallScreen ? '40px' : '56px',
   color: '#FFFFFF',
   textAlign: 'justify',
   transition: 'font-size 0.3s ease-in-out', 
@@ -58,7 +57,10 @@ const dropdownStyles = {
   return (
     <div className="App">
       <React.Fragment>
-        <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}} >
+      <Grid container >
+        <Grid item width={'100vw'}>
+            <Navbar />
+       </Grid>
           <Box sx={{
           width: '100%',
           height: '100vh',
@@ -69,20 +71,20 @@ const dropdownStyles = {
           backgroundSize: 'cover',
         }}
       >
-          <Grid item width={'100vw'}>
-            <Navbar />
-          </Grid>
-          <Grid item>
-          <p style={{ ...headingStyles, marginTop: '64px', marginBottom: '1px' }}>Welcome to</p>
-        <p style={{ ...descriptionStyles, marginTop: '24px' }}>FilipinoPassport.com</p>
-        <p style={{ ...dropdownStyles, marginTop: '24px',marginBottom: '64px' }}>
-          Visa Application Services and Travel Guides
-          <br />
-          for Philippines Passport Holders
-        </p>
-          </Grid>
-          <Grid item>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6}>
             <Checkout />
+          </Grid>
+          <Grid item xs={6} >{!isSmallScreen && (
+                <>
+                  <p style={{ ...headingStyles, marginTop: '96px', lineHeight: '80px' }}>LET'S NOW BOOK YOUR <br />
+                    RENTAL FLIGHT TICKET</p>
+                  <p style={{ ...descriptionStyles, marginTop: '200px' }}>AT A VERY LOW PRICE OF</p>
+                  <p style={{ ...dropdownStyles, marginTop: '1px' }}>
+                    30€ EURO or 35$ USD
+                  </p>
+                </>
+              )}</Grid>
           </Grid>
           </Box>
           <Grid item >
