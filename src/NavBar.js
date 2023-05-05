@@ -37,7 +37,7 @@ function Navbar() {
 					Home 
 					</button>
 				<button className="services-btn" 
-					onClick={() => {navigate("/services")}}> 
+					onClick={() => { window.location.href = 'https://mrandmrshowe.com/about-kach'; }}> 
 					About 
 					</button>
 				<button className="services-btn" 
