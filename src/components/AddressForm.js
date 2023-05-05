@@ -1,70 +1,96 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Datepicker from './Datepicker';
+import { useDispatch } from 'react-redux';
+import { updatedeliveryEmailAddress, updatetravelerName, updatetravelerFlightDetails, updateflightDate} from './store';
+
 
 export default function AddressForm() {
+  const [deliveryEmailAddress, setDeliveryEmailAddress] = useState(null);
+  const [travelerName, setTravelerName] = useState(null);
+  const [travelerFlightDetails, setTravelerFlightDetails] = useState(null);
+  const [flightDate, setFlightDate] = useState(null);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = { deliveryEmailAddress, travelerName, travelerFlightDetails, flightDate };
+    dispatch(updatedeliveryEmailAddress(deliveryEmailAddress));
+    dispatch(updatetravelerName(travelerName));
+    dispatch(updatetravelerFlightDetails(travelerFlightDetails));
+    dispatch(updateflightDate(flightDate));
+
+    checkout(formData);
+  };
+
+  const checkout = (formData) => {
+    <a href="mailto:jayroldsoriano@yahoo.com?subject=Rent-a-flight%20Reservation&body=%28Delivery%20Email%20Address%3A%20${formData.deliveryEmailAddress}%5CnTraveler%27s%20Name%3A%20${formData.travelerName}%5CnTraveler%20Flight%20Details%3A%20${formData.travelerFlightDetails}%5CnFlight%20Date%3A%20${formData.flightDate}%29">Send Reservation</a>
+  };
+
   return (
     <React.Fragment>
       <Typography variant="h4" marginTop={2} gutterBottom>
       Fill up the Form below
       </Typography>
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            label="Delivery Email Address"
-            fullWidth
-            autoComplete="given-name"
-            variant="outlined"
-          />
+      <form onSubmit={handleSubmit}>
+        <Grid container spacing={1}>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="deliveryEmailAddress"
+              name="deliveryEmailAddress"
+              label="Delivery Email Address"
+              fullWidth
+              autoComplete="given-name"
+              variant="outlined"
+              value={deliveryEmailAddress}
+              onChange={(e) => setDeliveryEmailAddress(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="travelerName"
+              name="travelerName"
+              label="Traveler's Name"
+              helperText="Follow this format: Mr or Ms or Mrs/LASTNAME/FIRSTNAME/MIDDLENAME (Separate names using comma if traveling with someone)"
+              fullWidth
+              autoComplete="shipping address-line1"
+              variant="outlined"
+              value={travelerName}
+              onChange={(e) => setTravelerName(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              required
+              id="travelerFlightDetails"
+              name="travelerFlightDetails"
+              label="Traveler Flight Details"
+              helperText="Example: (December 1, 2020) Manila - Heathrow (January 3, 2021) Heathrow - Manila"
+              fullWidth
+              autoComplete="shipping address-line2"
+              variant="outlined"
+              value={travelerFlightDetails}
+              onChange={(e) => setTravelerFlightDetails(e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={12} fullWidth>
+            <Datepicker
+              fullWidth
+              value={flightDate}
+              onChange={(date) => setFlightDate(date)}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            {/* <button type="submit" href="mailto:jayroldsoriano@yahoo.com?subject=Rent-a-flight%20Reservation&body=%28Delivery%20Email%20Address%3A%20${formData.deliveryEmailAddress}%5CnTraveler%27s%20Name%3A%20${formData.travelerName}%5CnTraveler%20Flight%20Details%3A%20${formData.travelerFlightDetails}%5CnFlight%20Date%3A%20${formData.flightDate}%29">Send Reservation</button> */}
+          </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            id="travelername"
-            name="travelername"
-            label="Traveler's Name"
-            helperText="Follow this format:                                                              
-            Mr or Ms or Mrs/LASTNAME/FIRSTNAME/MIDDLENAME
-            (Separate names using comma if traveling with someone)"
-            fullWidth
-            autoComplete="shipping address-line1"
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            id="flightdetails"
-            name="flightdetails"
-            label="Traveler Flight Details"
-            helperText="Example: (December 1, 2020) Manila - Heathrow                (January 3, 2021) Heathrow - Manila"
-            fullWidth
-            autoComplete="shipping address-line2"
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item xs={12} fullWidth>
-          <Datepicker fullWidth/>
-        </Grid>
-      </Grid>
+      </form>
     </React.Fragment>
   );
 }
-
-{/* <TextField
-            required
-            id="flightdate"
-            name="flightdate"
-            label="When Is Your Appointment or Flight Date? "
-            helperText="Tell us when the ticket will be used as we recommend sending your ticket 3 days before for longer reservation period."
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="outlined"
-          /> */}

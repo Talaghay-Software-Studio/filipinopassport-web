@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import { useSelector } from 'react-redux';
 
 const steps = ['Traveler Information', 'Payment Methods', 'Order Confirmation'];
 
@@ -30,40 +31,15 @@ function getStepContent(step) {
   }
 }
 
-const theme = createTheme({
-  typography: {
-    fontSize: 14,
-    h4: {
-      fontSize: '1.5rem',
-      fontWeight: 600,
-    },
-    h5: {
-      fontSize: '1.25rem',
-      fontWeight: 600,
-    },
-    subtitle1: {
-      fontSize: '0.875rem',
-    },
-    status: {
-      danger: '#e53e3e',
-    },
-    palette: {
-      primary: {
-        main: '#36ADA8',
-        darker: '#36ADA8',
-      },
-      neutral: {
-        main: '#36ADA8',
-        contrastText: '#fff',
-      },
-    },
-  },
-});
-
-export default function Checkout() {
+export default function Checkout() { 
   const [paymentDetails, setPaymentDetails] = useState({});
   const [activeStep, setActiveStep] = React.useState(0);
+  const deliveryEmailAddress = useSelector((state) => state.deliveryEmailAddress.deliveryEmailAddress);
+  const travelerName = useSelector((state) => state.travelerName.travelerName);
+  const travelerFlightDetails = useSelector((state) => state.travelerFlightDetails.travelerFlightDetails);
 
+  // {deliveryEmailAddress} {travelerName} {travelerFlightDetails}
+  
   const handleNext = () => {
     setActiveStep(activeStep + 1);
   };
@@ -133,3 +109,34 @@ export default function Checkout() {
     </ThemeProvider>
   );
 }
+
+
+const theme = createTheme({
+  typography: {
+    fontSize: 14,
+    h4: {
+      fontSize: '1.5rem',
+      fontWeight: 600,
+    },
+    h5: {
+      fontSize: '1.25rem',
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontSize: '0.875rem',
+    },
+    status: {
+      danger: '#e53e3e',
+    },
+    palette: {
+      primary: {
+        main: '#36ADA8',
+        darker: '#36ADA8',
+      },
+      neutral: {
+        main: '#36ADA8',
+        contrastText: '#fff',
+      },
+    },
+  },
+});

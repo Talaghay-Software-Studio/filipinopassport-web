@@ -20,9 +20,6 @@ const Dropdown = () => {
       const destination = selectedOption.label;
       dispatch(updateRequirements(requirements));
       dispatch(updateDestination(destination));
-
-      alert(destination)
-      alert(requirements)
       navigate("/visapassportinfo")
     }
   };

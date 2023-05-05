@@ -40,21 +40,23 @@ function VisaPassportInfo() {
           <p style={{ ...descriptionStyles, marginTop: '24px',marginBottom: '64px' }}>
           Requirements for Philippines Passport Holder
           </p>
+        <Grid item >
           <Information />
+        </Grid>
           </Stack>
-        <Stack item marginTop={'-50vh'} >
+        <Stack item marginTop={'-110vh'}>
         <Box
       sx={{
         width: '100vw',
-        height: '200px',
-        background: 'linear-gradient(to bottom, #ffffff00, #F6F6F6)',
+        height: '100vh',
+        background: 'linear-gradient(to bottom, #ffffff00 1%, #F6F6F6)',
         zIndex: -1
       }}
     />
     <Box
       sx={{
         width: '100vw',
-        height: '90vh',
+        height: '100vh',
         background: '#F6F6F6',
         zIndex: -1
       }}
