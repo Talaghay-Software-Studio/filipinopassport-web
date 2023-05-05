@@ -5,6 +5,8 @@ import Footer from '../Footer';
 import Montenegro from '../images/Montenegro.png'
 import Checkout from '../components/Checkout'
 import { Box, Grid, Paper } from '@mui/material';
+import Stack from '@mui/material/Stack';
+ 
 
 
 function Services() {
@@ -56,44 +58,46 @@ const dropdownStyles = {
 
   return (
     <div className="App">
-      <React.Fragment>
-      <Grid container >
+  <React.Fragment>
+    <Grid container>
+      <Box sx={{
+        width: '100%',
+        height: '100%',
+        opacity: [1, 1, 1],
+        marginBottom: '0%',
+      }}>
         <Grid item width={'100vw'}>
-            <Navbar />
-       </Grid>
-          <Box sx={{
-          width: '100%',
-          height: '100vh',
-          bgcolor: 'black',
-          opacity: [1, 1, 1],
-          marginBottom: '25vh',
-          backgroundImage: `url(${Montenegro})`,
-          backgroundSize: 'cover',
-        }}
-      >
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6}>
+          <Navbar />
+        </Grid>
+        <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6} minWidth={'500px'}>
             <Checkout />
           </Grid>
-          <Grid item xs={6} >{!isSmallScreen && (
-                <>
-                  <p style={{ ...headingStyles, marginTop: '96px', lineHeight: '80px' }}>LET'S NOW BOOK YOUR <br />
-                    RENTAL FLIGHT TICKET</p>
-                  <p style={{ ...descriptionStyles, marginTop: '200px' }}>AT A VERY LOW PRICE OF</p>
-                  <p style={{ ...dropdownStyles, marginTop: '1px' }}>
-                    30€ EURO or 35$ USD
-                  </p>
-                </>
-              )}</Grid>
-          </Grid>
-          </Box>
-          <Grid item >
-            <Footer />
+          <Grid item xs={6}>
+            {!isSmallScreen && (
+              <>
+                <p style={{ ...headingStyles, marginTop: '96px', lineHeight: '80px' }}>
+                  LET'S NOW BOOK YOUR <br />
+                  RENTAL FLIGHT TICKET
+                </p>
+                <p style={{ ...descriptionStyles, marginTop: '200px' }}>
+                  AT A VERY LOW PRICE OF
+                </p>
+                <p style={{ ...dropdownStyles, marginTop: '1px' }}>
+                  30€ EURO or 35$ USD
+                </p>
+              </>
+            )}
           </Grid>
         </Grid>
-      </React.Fragment>
-    </div>
-  )
+        <Stack item marginTop={'80vh'}>
+          <Footer />
+        </Stack>
+      </Box>
+    </Grid>
+  </React.Fragment>
+</div>
+)
 }
 
 export default Services;

@@ -1,60 +1,74 @@
 import '../App.css';
-import React from 'react'
+import React, { useContext, useState } from 'react';
 import { useWindowSize } from "../components/useWindowSize"
 import Navbar from "../NavBar";
-import Dropdown from "../components/Dropdown"
 import Footer from '../Footer';
 import Flags_Background from '../images/Flags_Background.jpg'
 import { Box, Grid, Paper } from '@mui/material';
-import { positions } from '@mui/system';
 import Stack from '@mui/material/Stack';
 import Information from '../components/Information';
+import AppContext from "../components/AppContext";
 
 
 
-function Home() {
+
+function VisaPassportInfo() {
   const [width, height] = useWindowSize()
-
+  const { requirements, destination } = useContext(AppContext);
+  const countryname = useState('')
 
   return (
     <div className="App" style={{backgroundImage: `url(${Flags_Background})`, zIndex: 9}}>
   <React.Fragment>
-    <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}}>
+    <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'}}>
       <Box sx={{
         width: '100%',
         height: '100%',
         opacity: [1, 1, 1],
-        marginBottom: '0%',
       }}>
         <Grid item width={'100vw'}>
           <Navbar />
         </Grid>
-        <Grid item xs={12}>
-          <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Welcome to</p>
-          <p style={{ ...headingStyles, marginTop: '24px' }}>FilipinoPassport.com</p>
+        <Stack
+  direction="column"
+  justifyContent="flex-start"
+  alignItems="center"
+>
+          <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Travel Requirements</p>
+          <p style={{ ...headingStyles, }}>Traveling to {destination} </p>
           <p style={{ ...descriptionStyles, marginTop: '24px',marginBottom: '64px' }}>
-            Visa Application Services and Travel Guides
-            <br />
-            for Philippines Passport Holders
+          Requirements for Philippines Passport Holder
           </p>
-          <p style={{ ...dropdownStyles, fontSize: '14px', marginBottom: '8px' }}>Where are You Going?</p>
-        </Grid>
-        <Grid item xs={12} marginBottom={'200px'}>
-          <Dropdown />
-        </Grid>
-        <Stack item marginTop={'100vh'}>
+          <Information />
+          </Stack>
+        <Stack item marginTop={'-50vh'} >
+        <Box
+      sx={{
+        width: '100vw',
+        height: '200px',
+        background: 'linear-gradient(to bottom, #ffffff00, #F6F6F6)',
+        zIndex: -1
+      }}
+    />
+    <Box
+      sx={{
+        width: '100vw',
+        height: '90vh',
+        background: '#F6F6F6',
+        zIndex: -1
+      }}
+    />
           <Footer />
         </Stack>
       </Box>
     </Grid>
   </React.Fragment>
 </div>
-
-  )
+)
   
 }
 
-export default Home;
+export default VisaPassportInfo;
 
 const bgStyle = {
     position: 'fixed',
@@ -65,7 +79,7 @@ const bgStyle = {
 const titleStyles = {
   fontFamily: 'Mulish',
   fontWeight: 400,
-  fontSize: '20px',
+  fontSize: '16px',
   color: '#FFFFFF',
   lineHeight: '30px',
   transition: 'font-size 0.8s ease-in-out', 
@@ -73,8 +87,8 @@ const titleStyles = {
 
 const headingStyles = {
   fontFamily: 'Mulish',
-  fontWeight: 700,
-  fontSize: '32px',
+  fontWeight: 800,
+  fontSize: '40px',
   color: '#FFFFFF',
   lineHeight: '46px',
   height: '46px',
