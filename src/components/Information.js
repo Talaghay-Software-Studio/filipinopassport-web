@@ -9,6 +9,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { visainfo, destination } from './Dropdown';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+
 
 
 const theme = createTheme({
@@ -42,6 +44,7 @@ const theme = createTheme({
 });
 
 export default function Information() {
+	const navigate = useNavigate()
     const requirements = useSelector((state) => state.requirements.requirements);
     const destination = useSelector((state) => state.destination.destination);
 
@@ -108,7 +111,9 @@ export default function Information() {
   <Typography variant='h4' mt={3} sx={{marginLeft: 8, marginRight: 8}} > Passport</Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}}></Box>
   <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} > Passport is required</Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8, marginBottom: 8}} color="GrayText" textAlign={'left'} > Passports and other documents accepted for entry must be valid on arrival.</Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8, marginBottom: 8}} color="GrayText" textAlign={'left'} > Passports and other documents accepted for entry must be valid on arrival. <br/>
+  <br/>
+  Passport has at least 2 blank visa pages.</Typography>
   </Grid>
   </Paper>
       </Container>
@@ -122,15 +127,16 @@ export default function Information() {
   alignItems="flex-start"
  >
   
-  <Typography variant='h4' mt={4} sx={{marginLeft: 8, marginRight: 8}} > LET'S NOW BOOK YOUR RENTAL FLIGHT TICKET</Typography>
+  <Typography variant='h4' mt={4} sx={{marginLeft: 8, marginRight: 8}} > 
+    Do you Need a flight reservation for your visa application?</Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}}></Box>
-  <Typography variant='h5' mt={2} sx={{marginLeft: 8, marginRight: 8}} > FOR ONLY €30 euro or $35 USD.</Typography>
+  <Typography variant='h5' mt={2} sx={{marginLeft: 8, marginRight: 8}} > Avail our Rent-a-Flight service for your Visa application</Typography>
   <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8}} color="GrayText" textAlign={'left'} > We offer legitimate and unique flight booking reservation for a fee of €30 EURO ($35 USD or Php 1,600) which can be verified by visiting the respective airline's website. Embassies only require a confirmed flight reservation for visa travel dates, and discourage paying for the full amount of the ticket before getting a visa approved. The service is offered at a low cost because it can be hard to get a refund after the hold period of 3 or 4 weeks, which is usually the timeframe for visa application and approval. The agency charges €30 per round trip ticket per person and an additional €30 for every additional leg.</Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'whitesmoke',}}></Box>
   </Grid>
   <Button variant="contained" textSizeSmall sx={{borderRadius: 4,}}
   onClick={() => {
-    alert('clicked')
+    navigate("/services")
   }}
 >
   RESERVE NOW

@@ -66,10 +66,11 @@ const dropdownStyles = {
         opacity: [1, 1, 1],
         marginBottom: '0%',
       }}>
-        <Grid item width={'100vw'}>
+        <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          
+        <Grid item xs={12} width={'100vw'}>
           <Navbar />
         </Grid>
-        <Grid container rowSpacing={10} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={6} minWidth={'500px'}>
             <Checkout />
           </Grid>
