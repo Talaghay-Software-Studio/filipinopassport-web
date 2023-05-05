@@ -7,15 +7,16 @@ import Flags_Background from '../images/Flags_Background.jpg'
 import { Box, Grid, Paper } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Information from '../components/Information';
-import AppContext from "../components/AppContext";
+import { useSelector } from 'react-redux';
 
 
 
 
 function VisaPassportInfo() {
   const [width, height] = useWindowSize()
-  const { requirements, destination } = useContext(AppContext);
   const countryname = useState('')
+  const requirements = useSelector((state) => state.requirements.requirements);
+  const destination = useSelector((state) => state.destination.destination);
 
   return (
     <div className="App" style={{backgroundImage: `url(${Flags_Background})`, zIndex: 9}}>

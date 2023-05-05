@@ -1,39 +1,39 @@
 export const Countries = [
     {
       label: "Albania",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Algeria",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Andorra",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Angola",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Antigua and Barbuda",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Argentina",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Armenia",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Australia",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Austria",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Azerbaijan",
@@ -41,15 +41,15 @@ export const Countries = [
     },
     {
       label: "Bahamas",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Bahrain",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Bangladesh",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Barbados",
@@ -57,23 +57,23 @@ export const Countries = [
     },
     {
       label: "Belarus",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Belgium",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Belize",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Benin",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Bhutan",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Bolivia",
@@ -81,11 +81,11 @@ export const Countries = [
     },
     {
       label: "Bosnia and Herzegovina",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Botswana",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Brazil",
@@ -97,15 +97,15 @@ export const Countries = [
     },
     {
       label: "Bulgaria",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Burkina Faso",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Burundi",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Cambodia",
@@ -113,31 +113,31 @@ export const Countries = [
     },
     {
       label: "Cameroon",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Canada",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Cape Verde",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Central African Republic",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Chad",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Chile",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "China",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Colombia",
@@ -145,15 +145,15 @@ export const Countries = [
     },
     {
       label: "Comoros",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Congo",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "DR Congo",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Costa Rica",
@@ -165,27 +165,27 @@ export const Countries = [
     },
     {
       label: "Croatia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Cuba",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Cyprus",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Czech Republic",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Denmark",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Djibouti",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Dominica",
@@ -193,39 +193,39 @@ export const Countries = [
     },
     {
       label: "Dominican Republic",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Ecuador",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Egypt",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "El Salvador",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Equatorial Guinea",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Eritrea",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Estonia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Swaziland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Ethiopia",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Fiji",
@@ -233,15 +233,15 @@ export const Countries = [
     },
     {
       label: "Finland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "France",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Gabon",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Gambia",
@@ -249,39 +249,39 @@ export const Countries = [
     },
     {
       label: "Georgia",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Germany",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Ghana",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Greece",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Grenada",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Guatemala",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Guinea",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Guinea-Bissau",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Guyana",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Haiti",
@@ -289,7 +289,7 @@ export const Countries = [
     },
     {
       label: "Honduras",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Hong Kong",
@@ -297,15 +297,15 @@ export const Countries = [
     },
     {
       label: "Hungary",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Iceland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "India",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Indonesia",
@@ -313,15 +313,15 @@ export const Countries = [
     },
     {
       label: "Iran",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Iraq",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Ireland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Israel",
@@ -329,19 +329,19 @@ export const Countries = [
     },
     {
       label: "Italy",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Jamaica",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Japan",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Jordan",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Kazakhstan",
@@ -349,23 +349,23 @@ export const Countries = [
     },
     {
       label: "Kenya",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Kiribati",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Kosovo",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Kuwait",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Kyrgyzstan",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Laos",
@@ -373,35 +373,35 @@ export const Countries = [
     },
     {
       label: "Latvia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Lebanon",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Lesotho",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Liberia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Libya",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Liechtenstein",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Lithuania",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Luxembourg",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Macao",
@@ -409,11 +409,11 @@ export const Countries = [
     },
     {
       label: "Madagascar",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Malawi",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Malaysia",
@@ -421,31 +421,31 @@ export const Countries = [
     },
     {
       label: "Maldives",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Mali",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Malta",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Marshall Islands",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Mauritania",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Mauritius",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Mexico",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Micronesia",
@@ -453,11 +453,11 @@ export const Countries = [
     },
     {
       label: "Moldova",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Monaco",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Mongolia",
@@ -465,7 +465,7 @@ export const Countries = [
     },
     {
       label: "Montenegro",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Morocco",
@@ -473,7 +473,7 @@ export const Countries = [
     },
     {
       label: "Mozambique",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Myanmar",
@@ -481,59 +481,59 @@ export const Countries = [
     },
     {
       label: "Namibia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Nauru",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Nepal",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Netherlands",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "New Zealand",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Nicaragua",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Niger",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Nigeria",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "North Korea",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "North Macedonia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Norway",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Oman",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Pakistan",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Palau",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Palestine",
@@ -541,15 +541,15 @@ export const Countries = [
     },
     {
       label: "Panama",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Papua New Guinea",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Paraguay",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Peru",
@@ -561,23 +561,23 @@ export const Countries = [
     },
     {
       label: "Poland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Portugal",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Qatar",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Romania",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Russia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Rwanda",
@@ -585,35 +585,35 @@ export const Countries = [
     },
     {
       label: "Saint Kitts and Nevis",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Saint Lucia",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Samoa",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "San Marino",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Sao Tome and Principe",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Saudi Arabia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Senegal",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Serbia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Seychelles",
@@ -621,7 +621,7 @@ export const Countries = [
     },
     {
       label: "Sierra Leone",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Singapore",
@@ -629,39 +629,39 @@ export const Countries = [
     },
     {
       label: "Slovakia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Slovenia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Solomon Islands",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Somalia",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "South Africa",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "South Korea",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "South Sudan",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Spain",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Sri Lanka",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Saint Vincent and the Grenadines",
@@ -669,7 +669,7 @@ export const Countries = [
     },
     {
       label: "Sudan",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Suriname",
@@ -677,15 +677,15 @@ export const Countries = [
     },
     {
       label: "Sweden",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Switzerland",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Syria",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Taiwan",
@@ -697,7 +697,7 @@ export const Countries = [
     },
     {
       label: "Tanzania",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Thailand",
@@ -705,63 +705,63 @@ export const Countries = [
     },
     {
       label: "Timor-Leste",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Togo",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Tonga",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Trinidad and Tobago",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Tunisia",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Turkmenistan",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Tuvalu",
-      value: "visa on arrival"
+      value: "Visa on Arrival"
     },
     {
       label: "Turkey",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Uganda",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Ukraine",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "United Arab Emirates",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "United Kingdom",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "United States",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Uruguay",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Uzbekistan",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Vanuatu",
@@ -769,11 +769,11 @@ export const Countries = [
     },
     {
       label: "Vatican",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Venezuela",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Vietnam",
@@ -781,18 +781,18 @@ export const Countries = [
     },
     {
       label: "Yemen",
-      value: "visa required"
+      value: "Visa Required"
     },
     {
       label: "Zambia",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Zimbabwe",
-      value: "e-visa"
+      value: "e-Visa"
     },
     {
       label: "Afghanistan",
-      value: "visa required"
+      value: "Visa Required"
     }
   ];

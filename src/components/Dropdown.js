@@ -3,21 +3,24 @@ import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom'
 import { Countries } from './Countries';
-import { AppContext } from './AppContext'; // import the AppContext
+import { useDispatch } from 'react-redux';
+import { updateRequirements, updateDestination } from './store';
 
 
 const Dropdown = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedDestination, setSelectedDestination] = useState("")
-  const [selectedRequirements, setSelectedRequirements] = useState("")
 
   const navigate = useNavigate();
   const navRef = useRef();
+  const dispatch = useDispatch();
 
   const handleSearchClick = () => {
     if (selectedOption) {
       const requirements = selectedOption.value;
       const destination = selectedOption.label;
+      dispatch(updateRequirements(requirements));
+      dispatch(updateDestination(destination));
+
       alert(destination)
       alert(requirements)
       navigate("/visapassportinfo")
@@ -25,7 +28,6 @@ const Dropdown = () => {
   };
 
   return (
-    <AppContext.Provider>
     <div className="container">
       <div className="row">
         <div className="col-md-3"></div>
@@ -94,7 +96,6 @@ const Dropdown = () => {
         <div className="col-md-4"></div>
       </div>
     </div>
-    </AppContext.Provider>
   );
 }
 

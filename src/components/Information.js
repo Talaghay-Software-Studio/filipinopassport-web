@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button, Grid } from '@mui/material';
 import { visainfo, destination } from './Dropdown';
+import { useSelector } from 'react-redux';
+
 
 const theme = createTheme({
   typography: {
@@ -40,6 +42,38 @@ const theme = createTheme({
 });
 
 export default function Information() {
+    const requirements = useSelector((state) => state.requirements.requirements);
+    const destination = useSelector((state) => state.destination.destination);
+
+    function renderText(requirements) {
+        let textToRender;
+    
+        if (typeof requirements === "number") {
+            textToRender = `The Philippines passport holders can visit ${destination} visa-free for a maximum stay of ${requirements} days`;
+        } else if (requirements === "e-Visa") {
+          textToRender = "Electronic visas are filled out online on an official government website or through a travel agency.";
+        } else if (requirements === "Visa Required") {
+            textToRender = "You must apply for a visa prior to entry. This likely means you'll have to file documents, pay a fee, and visit an embassy.";
+        } else if (requirements === "Visa on Arrival") {
+            textToRender = "You don't need a visa for Tuvalu if you have a(n) Philippines passport. Before going through customs, you'll have to fill out a form and possibly pay an entry-fee at the airport.";
+        } else {
+            textToRender = "Invalid input.";
+        }
+    
+        return textToRender 
+      } 
+
+      function renderRequirements(requirements) {
+        let visaRequirements;
+    
+        if (typeof requirements === "number") {
+            visaRequirements = `Visa Free for ${requirements} days`;
+        } else {
+            visaRequirements = `${requirements}`
+        }
+    
+        return visaRequirements 
+      } 
 
   return (
     <ThemeProvider theme={theme} >
@@ -68,13 +102,13 @@ export default function Information() {
   
   <Typography variant='h4' mt={8} sx={{marginLeft: 8, marginRight: 8}} > Visa</Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}}></Box>
-  <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} > Visa is required</Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8}} color="GrayText" textAlign={'left'} > You must apply for a visa prior to entry. This likely means you'll have to file documents, pay a fee, and visiting an embassy.</Typography>
+  <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} > {renderRequirements(requirements)} </Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8}} color="GrayText" textAlign={'left'} > {renderText(requirements)} </Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'whitesmoke',}}></Box>
   <Typography variant='h4' mt={3} sx={{marginLeft: 8, marginRight: 8}} > Passport</Typography>
   <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}}></Box>
   <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} > Passport is required</Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8, marginBottom: 8}} color="GrayText" textAlign={'left'} > You must apply for a visa prior to entry. This likely means you'll have to file documents, pay a fee, and visiting an embassy.</Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8, marginBottom: 8}} color="GrayText" textAlign={'left'} > Passports and other documents accepted for entry must be valid on arrival.</Typography>
   </Grid>
   </Paper>
       </Container>
