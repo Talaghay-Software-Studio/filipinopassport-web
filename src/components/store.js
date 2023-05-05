@@ -10,15 +10,6 @@ const initialState = {
   travelerFlightDetails: null, 
   flightDate: null,
 };
-const flightDateSlice = createSlice({
-  name: 'flightDate',
-  initialState,
-  reducers: {
-    updateflightDate: (state, action) => {
-      state.flightDate = action.payload;
-    },
-  },
-});
 
 const flightDateSlice = createSlice({
   name: 'flightDate',
