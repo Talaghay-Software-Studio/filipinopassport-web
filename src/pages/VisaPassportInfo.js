@@ -44,7 +44,7 @@ function VisaPassportInfo() {
           <Information />
         </Grid>
           </Stack>
-        <Stack item marginTop={'-110vh'}>
+        <Stack item marginTop={'-110vh'} sx={{minWidth: 450 }}>
         <Box
       sx={{
         width: '100vw',

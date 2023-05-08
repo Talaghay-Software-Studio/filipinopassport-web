@@ -92,7 +92,7 @@ const dropdownStyles = {
             )}
           </Grid>
         </Grid>
-        <Stack item marginTop={'80vh'}>
+        <Stack item marginTop={'80vh'} sx={{minWidth: 450 }}>
           <Footer />
         </Stack>
       </Box>

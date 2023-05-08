@@ -87,7 +87,7 @@ export default function Information() {
       </Container>
 <Container component="main" align="center"  >
         <Paper elevation={24} variant="outlined" align="center"  sx={{ p: 2, 
-    marginTop: 3, width: '80vw', borderRadius: 4, }}>
+    marginTop: 3, width: '80vw', borderRadius: 4, minWidth: 450 }}>
   <Grid
   container
   direction="column"

@@ -56,7 +56,7 @@ export default function Checkout() {
 
   const handleEmailSend = () => {
     const emailParams = {
-      to_email: 'jayroldsoriano@yahoo.com',
+      to_email: 'help@filipinopassport.com',
       name: `${travelerName}`,
       subject: 'RENT-A-FLIGHT',
       body: `
