@@ -1,19 +1,23 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Review from './Review'
-import { FormControl, MenuItem } from '@mui/base';
-import { InputLabel, Select, Input, InputAdornment } from '@mui/material';
 import SelectQuantity from './SelectQuantity';
 import SelectType from './SelectType';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { updatetotalAmount } from './store';
+import { useDispatch } from 'react-redux';
+
 
 
 
 export default function PaymentForm() {
   const [quantity, setQuantity] = React.useState('');
   const totalAmount = quantity * 30;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updatetotalAmount(totalAmount));
+  }, [totalAmount, dispatch]);
   
   return (
     

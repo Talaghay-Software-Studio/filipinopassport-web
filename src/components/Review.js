@@ -1,23 +1,35 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { updatereferenceNumber} from './store';
 import bdo from '../images/bdo.jpg'
 import bpi from '../images/bpi.png'
 import Paypal from '../images/Paypal.png'
 import westernunion from '../images/westernunion.png'
 
 export default function Review() {
+  const [referenceNumber, setReferenceNumber] = useState(null);
+  const dispatch = useDispatch();
+
+  
+  useEffect(() => {
+    dispatch(updatereferenceNumber(referenceNumber));
+  }, [referenceNumber, dispatch]);
+
+
   return (
     <React.Fragment>
       <Typography variant="h4" marginTop={2}>
         Payment Partners
       </Typography>
       <Typography variant="h7" gutterBottom>
-        Please pay exact amount only
+        Please pay exact amount only After completing your payment, please enter the reference number provided by your bank below
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
@@ -77,7 +89,7 @@ export default function Review() {
       </CardActionArea>
     </Card>
     </Grid>
-    <Grid item xs={6}>
+    <Grid item xs={6} gutterBottom>
         <Card sx={{ maxWidth: 150, marginTop: 2, }}>
       <CardActionArea>
       <CardMedia
@@ -96,8 +108,21 @@ export default function Review() {
       </CardActionArea>
     </Card>
     </Grid>
+    <Grid item xs={12} marginTop={2}>
+            <TextField
+              required
+              id="referenceNumber"
+              name="referenceNumber"
+              label="Reference Number"
+              fullWidth
+              variant="outlined"
+              value={referenceNumber}
+              onChange={(e) => {
+                setReferenceNumber(e.target.value);
+              }}
+            />
+          </Grid>
       </Grid>
-      
     </React.Fragment>
   );
 }

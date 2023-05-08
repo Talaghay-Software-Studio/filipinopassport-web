@@ -7,9 +7,32 @@ const initialState = {
   destination: null,
   deliveryEmailAddress: null,
   travelerName: null,
-  travelerFlightDetails: null, 
+  travelerFlightDetails: null,
   flightDate: null,
+  totalAmount: null,
+  referenceNumber: null,
 };
+
+
+const referenceNumberSlice = createSlice({
+  name: 'referenceNumber',
+  initialState,
+  reducers: {
+    updatereferenceNumber: (state, action) => {
+      state.referenceNumber = action.payload;
+    },
+  },
+});
+
+const totalAmountSlice = createSlice({
+  name: 'totalAmount',
+  initialState,
+  reducers: {
+    updatetotalAmount: (state, action) => {
+      state.totalAmount = action.payload;
+    },
+  },
+});
 
 const flightDateSlice = createSlice({
   name: 'flightDate',
@@ -79,6 +102,8 @@ const store = configureStore({
     travelerName: travelerNameSlice.reducer,
     travelerFlightDetails: travelerFlightDetailsSlice.reducer,
     flightDate: flightDateSlice.reducer,
+    totalAmount: totalAmountSlice.reducer,
+    referenceNumber: referenceNumberSlice.reducer,
   },
 });
 
@@ -88,5 +113,10 @@ export const { updatedeliveryEmailAddress } = deliveryEmailAddressSlice.actions;
 export const { updatetravelerName} = travelerNameSlice.actions;
 export const { updatetravelerFlightDetails } = travelerFlightDetailsSlice.actions;
 export const { updateflightDate } = flightDateSlice.actions;
+export const { updatetotalAmount } = totalAmountSlice.actions;
+export const { updatereferenceNumber } = referenceNumberSlice.actions;
+
+export const selectflightDate = (state) => state.flightDate.flightDate;
+
 
 export default store;

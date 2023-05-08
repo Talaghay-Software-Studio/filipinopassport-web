@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Datepicker from './Datepicker';
 import { useDispatch } from 'react-redux';
 import { updatedeliveryEmailAddress, updatetravelerName, updatetravelerFlightDetails, updateflightDate} from './store';
-
+import DatePickerValue from './Datepicker';
 
 export default function AddressForm() {
   const [deliveryEmailAddress, setDeliveryEmailAddress] = useState(null);
@@ -16,27 +13,20 @@ export default function AddressForm() {
   const [flightDate, setFlightDate] = useState(null);
   const dispatch = useDispatch();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = { deliveryEmailAddress, travelerName, travelerFlightDetails, flightDate };
+  useEffect(() => {
     dispatch(updatedeliveryEmailAddress(deliveryEmailAddress));
     dispatch(updatetravelerName(travelerName));
     dispatch(updatetravelerFlightDetails(travelerFlightDetails));
     dispatch(updateflightDate(flightDate));
+  }, [deliveryEmailAddress, travelerName, travelerFlightDetails, flightDate, dispatch]);
 
-    checkout(formData);
-  };
-
-  const checkout = (formData) => {
-    <a href="mailto:jayroldsoriano@yahoo.com?subject=Rent-a-flight%20Reservation&body=%28Delivery%20Email%20Address%3A%20${formData.deliveryEmailAddress}%5CnTraveler%27s%20Name%3A%20${formData.travelerName}%5CnTraveler%20Flight%20Details%3A%20${formData.travelerFlightDetails}%5CnFlight%20Date%3A%20${formData.flightDate}%29">Send Reservation</a>
-  };
 
   return (
     <React.Fragment>
       <Typography variant="h4" marginTop={2} gutterBottom>
       Fill up the Form below
       </Typography>
-      <form onSubmit={handleSubmit}>
+      <form>
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <TextField
@@ -48,7 +38,9 @@ export default function AddressForm() {
               autoComplete="given-name"
               variant="outlined"
               value={deliveryEmailAddress}
-              onChange={(e) => setDeliveryEmailAddress(e.target.value)}
+              onChange={(e) => {
+                setDeliveryEmailAddress(e.target.value);
+              }}
             />
           </Grid>
           <Grid item xs={12}>
@@ -62,7 +54,10 @@ export default function AddressForm() {
               autoComplete="shipping address-line1"
               variant="outlined"
               value={travelerName}
-              onChange={(e) => setTravelerName(e.target.value)}
+              onChange={(e) => {
+                setTravelerName(e.target.value);
+              }}
+
             />
           </Grid>
           <Grid item xs={12}>
@@ -76,15 +71,13 @@ export default function AddressForm() {
               autoComplete="shipping address-line2"
               variant="outlined"
               value={travelerFlightDetails}
-              onChange={(e) => setTravelerFlightDetails(e.target.value)}
+              onChange={(e) => {
+                setTravelerFlightDetails(e.target.value);
+              }}
             />
           </Grid>
-          <Grid item xs={12} fullWidth>
-            <Datepicker
-              fullWidth
-              value={flightDate}
-              onChange={(date) => setFlightDate(date)}
-            />
+          <Grid item xs={12} >
+            <DatePickerValue fullWidth/>
           </Grid>
           <Grid item xs={12}>
             {/* <button type="submit" href="mailto:jayroldsoriano@yahoo.com?subject=Rent-a-flight%20Reservation&body=%28Delivery%20Email%20Address%3A%20${formData.deliveryEmailAddress}%5CnTraveler%27s%20Name%3A%20${formData.travelerName}%5CnTraveler%20Flight%20Details%3A%20${formData.travelerFlightDetails}%5CnFlight%20Date%3A%20${formData.flightDate}%29">Send Reservation</button> */}

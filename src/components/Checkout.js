@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as React from 'react';
+import dayjs from 'dayjs';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -14,6 +15,8 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 import { useSelector } from 'react-redux';
+import emailjs from '@emailjs/browser';
+
 
 const steps = ['Traveler Information', 'Payment Methods', 'Order Confirmation'];
 
@@ -37,8 +40,57 @@ export default function Checkout() {
   const deliveryEmailAddress = useSelector((state) => state.deliveryEmailAddress.deliveryEmailAddress);
   const travelerName = useSelector((state) => state.travelerName.travelerName);
   const travelerFlightDetails = useSelector((state) => state.travelerFlightDetails.travelerFlightDetails);
+  const flightDate = useSelector((state) => state.flightDate.flightDate);
+  const formattedDate = dayjs(flightDate).format('MMMM D, YYYY');
+  const totalAmount = useSelector((state) => state.totalAmount.totalAmount);
+  const referenceNumber = useSelector((state) => state.referenceNumber.referenceNumber);
 
-  // {deliveryEmailAddress} {travelerName} {travelerFlightDetails}
+  // const handleEmailSend = () => {
+  //   alert(referenceNumber)
+  //   alert( totalAmount)
+  //   alert( deliveryEmailAddress)
+  //   alert( travelerName)
+  //   alert( travelerFlightDetails)
+  //   alert( formattedDate)
+  // }
+
+  const handleEmailSend = () => {
+    const emailParams = {
+      to_email: 'jayroldsoriano@yahoo.com',
+      name: `${travelerName}`,
+      subject: 'RENT-A-FLIGHT',
+      body: `
+        Delivery Email Address: ${deliveryEmailAddress}
+        Traveler's Name: ${travelerName}
+        Traveler Flight Details: ${travelerFlightDetails}
+        Appointment or Flight Date: ${formattedDate}
+        Total Amount: $${totalAmount}
+        Reference Number: ${referenceNumber}
+      `,
+    };
+  
+    emailjs.send(
+      'service_w2q2tu7',
+      'template_evsdqw4',
+      {
+        to_email: emailParams.to_email,
+        subject: emailParams.subject,
+        body: emailParams.body,
+        name: emailParams.name
+      },
+      'Ng4VM8Cb1b78fOxtA'
+    ).then((result) => {
+      console.log(result.text);
+      // alert('Email sent successfully!');
+      setActiveStep(activeStep + 1)
+    }, (error) => {
+      console.log(error.text);
+      alert('An error occurred, please try again later.');
+    });
+  };
+
+
+  // {deliveryEmailAddress} {travelerName} {travelerFlightDetails} {formattedDate}
   
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -78,7 +130,7 @@ export default function Checkout() {
           {activeStep === steps.length ? (
             <React.Fragment>
               <Typography variant="h5" gutterBottom marginTop={2}>
-                Thank you for your order.
+                Thank you for your order. 
               </Typography>
               <Typography variant="body2" gutterBottom>
               You will receive an email confirmation from our team member or the travel agency,if not please send a follow up email to help@filipinopassport.com to assist you.
@@ -94,13 +146,13 @@ export default function Checkout() {
                   </Button>
                 )}
 
-                <Button
-                  variant="contained"
-                  onClick={handleNext}
-                  sx={{ ml: 2, color: '#fff', bgcolor: '#36ADA8' }}
-                >
-                  {activeStep === steps.length - 1 ? 'Done' : 'Next'}
-                </Button>
+<Button
+  variant="contained"
+  onClick={activeStep === steps.length - 1 ? handleEmailSend : handleNext}
+  sx={{ ml: 2, color: '#fff', bgcolor: '#36ADA8' }}
+>
+  {activeStep === steps.length - 1 ? 'Send Email' : 'Next'}
+</Button>
               </Box>
             </React.Fragment>
           )}
