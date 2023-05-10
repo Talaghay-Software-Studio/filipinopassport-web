@@ -10,47 +10,28 @@ import Information from '../components/Information';
 import { useSelector } from 'react-redux';
 
 
-
-
-function VisaPassportInfo() {
-  const [width, height] = useWindowSize()
-  const countryname = useState('')
-  const requirements = useSelector((state) => state.requirements.requirements);
+function TitleHeader(){
   const destination = useSelector((state) => state.destination.destination);
-
+  
   return (
-    <div className="App" style={{backgroundImage: `url(${Flags_Background})`, zIndex: 9}}>
-  <React.Fragment>
-    <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center'}}>
-      <Box sx={{
-        width: '100%',
-        height: '100%',
-        opacity: [1, 1, 1],
-      }}>
-        <Grid item width={'100vw'}>
-          <Navbar />
-        </Grid>
-        <Stack
-  direction="column"
-  justifyContent="flex-start"
-  alignItems="center"
->
-          <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Travel Requirements</p>
+    <Grid item>
+      <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Travel Requirements</p>
           <p style={{ ...headingStyles, }}>Traveling to {destination} </p>
           <p style={{ ...descriptionStyles, marginTop: '24px',marginBottom: '64px' }}>
           Requirements for Philippines Passport Holder
           </p>
-        <Grid item >
-          <Information />
-        </Grid>
-          </Stack>
-        <Stack item marginTop={'-110vh'} sx={{minWidth: 450 }}>
-        <Box
+    </Grid>
+  )
+}
+
+function GradientColor(){
+  return (
+    <Grid item>
+      <Box
       sx={{
         width: '100vw',
         height: '100vh',
         background: 'linear-gradient(to bottom, #ffffff00 1%, #F6F6F6)',
-        zIndex: -1
       }}
     />
     <Box
@@ -58,9 +39,37 @@ function VisaPassportInfo() {
         width: '100vw',
         height: '100vh',
         background: '#F6F6F6',
-        zIndex: -1
       }}
-    />
+    /> 
+    </Grid>
+  )
+}
+
+function VisaPassportInfo() {
+  const [width, height] = useWindowSize()
+  const countryname = useState('')
+  const requirements = useSelector((state) => state.requirements.requirements);
+
+  return (
+    <div className="Requirements" >
+  <React.Fragment> 
+    <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', backgroundColor: `rgba(0, 0, 0, 0.24)`}}>
+      <Box sx={{width: '100%',height: '100%',}}>
+       <Grid item width={'100vw'}>
+          <Paper elevation={3} square sx={{ backgroundColor: `rgba(0, 0, 0, 0.55)` ,}} > 
+          <Navbar />
+          </Paper>
+      </Grid>
+      <Grid item>
+      <Grid container spacing={2} 
+         direction="column"
+         justifyContent="flex-start"
+         alignItems="center">
+    <TitleHeader />
+    <Information />
+        </Grid>
+      </Grid> 
+        <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>
       </Box>

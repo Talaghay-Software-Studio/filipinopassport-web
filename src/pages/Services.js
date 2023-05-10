@@ -11,8 +11,8 @@ import RFService from '../images/RFService.png'
 import CLWService from '../images/CLWService.png'
 import VABService from '../images/VABService.png'
 
-function RentflightService() {
 
+function RentflightService() {
     return (
         <Grid item>
         <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
@@ -38,7 +38,7 @@ function VisabundleService() {
     return (
         <Grid item>
         <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
-            <CardActionArea>
+            <CardActionArea href='./visabundle'>
              <CardMedia
           component="img"
           height="300"
@@ -60,7 +60,7 @@ function CoverletterService() {
     return (
         <Grid item>
         <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
-            <CardActionArea>
+            <CardActionArea href='./letterwriting' >
              <CardMedia
           component="img"
           height="300"
@@ -89,7 +89,9 @@ function Services() {
         height: '100%',
       }}>
         <Grid item width={'100vw'}>
-          <Navbar />
+            <Paper elevation={3}  square sx={{ backgroundColor: '#006173'}} > 
+            <Navbar />
+            </Paper>
         </Grid>
         <Grid item mt={10} mb={18} >
         <Typography variant='h2'>

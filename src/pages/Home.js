@@ -26,9 +26,11 @@ function Home() {
         opacity: [1, 1, 1],
         marginBottom: '0%',
       }}>
-        <Grid item width={'100vw'}>
+      <Grid item width={'100vw'}>
+          <Paper elevation={3} square  sx={{ backgroundColor: '#094173'}} > 
           <Navbar />
-        </Grid>
+          </Paper>
+      </Grid>
         <Grid item xs={12}>
           <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Welcome to</p>
           <p style={{ ...headingStyles, marginTop: '24px' }}>FilipinoPassport.com</p>
