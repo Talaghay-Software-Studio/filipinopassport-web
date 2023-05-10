@@ -49,7 +49,7 @@ export default function Information() {
     <ThemeProvider theme={theme} >
       <Grid item >
         <Paper elevation={24} variant="outlined" align="center"  sx={{ p: 2, 
-    marginTop: 8, width: '80vw', borderRadius: 4, minWidth: 450  }}>
+    marginTop: 8, width: '80vw', borderRadius: 4,  minWidth: '80vw' }}>
         <Box sx={{
     width: 400,
     height: 60,
@@ -67,15 +67,15 @@ export default function Information() {
   direction="column"
   justifyContent="flex-start"
   alignItems="flex-start">
-  <Typography variant='h4' mt={8} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'} > Visa</Typography>
-  <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}} align={'left'}></Box>
-  <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'}> {renderRequirements(requirements)} </Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8}} color="GrayText" textAlign={'left'} > {renderText(requirements)} </Typography>
-  <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'whitesmoke',}} align={'left'}></Box>
-  <Typography variant='h4' mt={3} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'}> Passport</Typography>
-  <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}} align={'left'}></Box>
-  <Typography variant='h5' mt={3} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'} > Passport is required</Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8, marginBottom: 8}} color="GrayText" textAlign={'left'} > Passports and other documents accepted for entry must be valid on arrival. <br/>
+  <Typography variant='h4' mt={8} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'} > Visa</Typography>
+  <Box sx={{marginLeft: 4 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}} align={'left'}></Box>
+  <Typography variant='h5' mt={3} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'}> {renderRequirements(requirements)} </Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 4, marginRight: 4}} color="GrayText" textAlign={'left'} > {renderText(requirements)} </Typography>
+  <Box sx={{marginLeft: 4 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'whitesmoke',}} align={'left'}></Box>
+  <Typography variant='h4' mt={3} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'}> Passport</Typography>
+  <Box sx={{marginLeft: 4 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered',}} align={'left'}></Box>
+  <Typography variant='h5' mt={3} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'} > Passport is required</Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 4, marginRight: 4, marginBottom: 8}} color="GrayText" textAlign={'left'} > Passports and other documents accepted for entry must be valid on arrival. <br/>
   <br/>
   Passport has at least 2 blank visa pages.</Typography>
   </Grid>
@@ -84,18 +84,18 @@ export default function Information() {
 
 <Grid item>
   <Paper elevation={24} variant="outlined" align="center"  sx={{ p: 2, 
-    marginTop: 2, width: '80vw', borderRadius: 4, minWidth: 450 }}>
+    marginTop: 2, width: '80vw', borderRadius: 4, minWidth: '80vw' }}>
      <Grid
       container
       direction="column"
       justifyContent="flex-start"
       alignItems="flex-start"
     >
-  <Typography variant='h4' mt={4} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'} > 
+  <Typography variant='h4' mt={4} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'} > 
     Do you need a flight reservation for your visa application?</Typography>
-  <Box sx={{marginLeft: 8 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered', }} Align={'left'}></Box>
-  <Typography variant='h5' mt={2} sx={{marginLeft: 8, marginRight: 8}} textAlign={'left'}> Avail our Rent-A-Flight service for your visa application</Typography>
-  <Typography variant='h7' mt={1} sx={{marginLeft: 8, marginRight: 8}} color="GrayText" textAlign={'left'} > We offer legitimate and unique flight booking reservation for a fee of €30 ($35 USD or Php 1,600) which can be verified by visiting the respective airline's website. Embassies only require a confirmed flight reservation for visa travel dates, and discourage paying for the full amount of the ticket before getting a visa approved. The service is offered at a low cost because it can be hard to get a refund after the hold period of 3 or 4 weeks, which is usually the timeframe for visa application and approval. The agency charges €30 per round trip ticket per person and an additional €30 for every additional leg.</Typography>
+  <Box sx={{marginLeft: 4 ,marginTop: 3, width: 100, height: 2, backgroundColor: 'orangered', }} Align={'left'}></Box>
+  <Typography variant='h5' mt={2} sx={{marginLeft: 4, marginRight: 4}} textAlign={'left'}> Avail our Rent-A-Flight service for your visa application</Typography>
+  <Typography variant='h7' mt={1} sx={{marginLeft: 4, marginRight: 4, marginBottom: 4}} color="GrayText" textAlign={'left'} > We offer legitimate and unique flight booking reservation for a fee of €30 ($35 USD or Php 1,600) which can be verified by visiting the respective airline's website. Embassies only require a confirmed flight reservation for visa travel dates, and discourage paying for the full amount of the ticket before getting a visa approved. The service is offered at a low cost because it can be hard to get a refund after the hold period of 3 or 4 weeks, which is usually the timeframe for visa application and approval. The agency charges €30 per round trip ticket per person and an additional €30 for every additional leg.</Typography>
   </Grid>
   <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}}
   onClick={() => {
