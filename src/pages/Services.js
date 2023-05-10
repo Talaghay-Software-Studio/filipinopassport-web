@@ -2,101 +2,113 @@ import '../App.css';
 import React, {useState, useEffect} from 'react'
 import Navbar from "../NavBar";
 import Footer from '../Footer';
-import Montenegro from '../images/Montenegro.png'
-import Checkout from '../components/Checkout'
-import { Box, Grid, Paper } from '@mui/material';
+import { Box, Grid, Paper, Typography, CardActionArea } from '@mui/material';
 import Stack from '@mui/material/Stack';
- 
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import RFService from '../images/RFService.png'
+import CLWService from '../images/CLWService.png'
+import VABService from '../images/VABService.png'
 
+function RentflightService() {
 
-function Services() {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.matchMedia('(max-width: 1024px)').matches) {
-        setIsSmallScreen(true);
-      } else {
-        setIsSmallScreen(false);
-      }
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  
-const headingStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 800,
-  fontSize: '40px',
-  color: '#FFFFFF',
-  lineHeight: isSmallScreen ? '40px' : '48px',
-  minWidth: '20%' ,
-  textAlign: 'left' ,
-  height: '46px',
-  transition: 'font-size 0.3s ease-in-out, lineHeight 0.8s ease-in-out', 
-};
-
-const descriptionStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 300,
-  fontSize: '16px',
-  color: '#FFFFFF',
-  textAlign: 'left',
-  transition: 'font-size 0.3s ease-in-out', 
-
-};
-
-const dropdownStyles = {
-  fontFamily: 'Mulish',
-  fontWeight: 1000,
-  fontSize:  '40px',
-  color: '#FFFFFF',
-  textAlign: 'left',
-  transition: 'font-size 0.3s ease-in-out', 
+    return (
+        <Grid item>
+        <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
+            <CardActionArea href='./rentflight'>
+             <CardMedia
+                 component="img"
+                 height="300"
+                 image={RFService}
+                 alt="Rent a flight Service"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+          For your visa applications in Canada, Europe, USA, Australia, Japan, South Korea etc.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+        </Grid>
+    )
 }
 
+function VisabundleService() {
+    return (
+        <Grid item>
+        <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
+            <CardActionArea>
+             <CardMedia
+          component="img"
+          height="300"
+          image={VABService}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+          Applicable for tourist visa applications to USA, Canada, Australia, Europe, and other countries.
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+        </Grid>
+    )
+}
+
+function CoverletterService() {
+    return (
+        <Grid item>
+        <Card sx={{ maxWidth: 345, minWidth: 300, minHeight: 300 }}>
+            <CardActionArea>
+             <CardMedia
+          component="img"
+          height="300"
+          image={CLWService}
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+          Personalized cover letter and invitation letter writing service
+for visa applications
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+        </Grid>
+    )
+}
+
+function Services() {
   return (
-    <div className="App">
-  <React.Fragment>
-    <Grid container>
+    <div className="Page">
+   <React.Fragment>
+    <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between'}}>
       <Box sx={{
         width: '100%',
         height: '100%',
-        opacity: [1, 1, 1],
-        marginBottom: '0%',
       }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          
-        <Grid item xs={12} width={'100vw'}>
+        <Grid item width={'100vw'}>
           <Navbar />
         </Grid>
-          <Grid item xs={6} minWidth={'500px'}>
-            <Checkout />
-          </Grid>
-          <Grid item xs={5}>
-            {!isSmallScreen && (
-              <>
-                <p style={{ ...headingStyles, marginTop: '96px', lineHeight: '48px' }}>
-                  LET'S NOW BOOK YOUR <br />
-                  RENTAL FLIGHT TICKET
-                </p>
-                <p style={{ ...descriptionStyles, marginTop: '150px' }}>
-                  AT A VERY LOW PRICE OF
-                </p>
-                <p style={{ ...dropdownStyles, marginTop: '10px' }}>
-                  30€ EURO or 35$ USD
-                </p>
-              </>
-            )}
-          </Grid>
+        <Grid item mt={10} mb={18} >
+        <Typography variant='h2'>
+            Our Services
+        </Typography>
         </Grid>
-        <Stack item marginTop={'80vh'} sx={{minWidth: 450 }}>
+        <Grid container spacing={3} 
+  direction="row"
+  justifyContent="center"
+  alignItems="center" >
+            <RentflightService />
+            <VisabundleService />
+            <CoverletterService />
+        </Grid>
+        <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>
-      </Box>
-    </Grid>
+        </Box> 
+        </Grid>
   </React.Fragment>
 </div>
 )

@@ -6,12 +6,22 @@
   background-attachment: fixed;
 }
 
+.Page {
+  background-color: #f2f2f2;
+  display: flexbox;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100vh;
+  height: 100%;
+}
+
 .App {
   text-align: center;
   position: relative;
-  min-height: 100vh;
   display: flexbox;
   flex-direction: column;
+  min-height: 100vh;
   height: 100%;
   background-image: url('../src/images/Flags_Background.jpg');
   background-size: cover;
@@ -146,7 +156,7 @@ header {
 	justify-content: space-between;
 	height: 56px;
 	padding: 0 2rem;
-	background-color: rgba(0, 0, 0, 0.24);
+	background-color: rgb(12,68,117);
 	color: var(--textColor);
   font-size: 1rem;
 }
