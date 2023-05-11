@@ -4,10 +4,17 @@ import Navbar from "../NavBar";
 import Footer from '../Footer';
 import Montenegro from '../images/Montenegro.png'
 import Checkout from '../components/Checkout'
-import { Box, Grid, Paper } from '@mui/material';
+import { Box, Grid, Paper, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
  
-
+function PageTitle() {
+  return(
+    <Grid item> 
+      <Typography variant='h4' align="left" color={'#fff'} mt={10} > LET'S NOW BOOK YOUR RENTAL FLIGHT TICKET</Typography>
+      <Typography variant='h6' align="left" color={'#fff'} mt={10}> AT A VERY LOW PRICE OF </Typography>
+      <Typography variant='h4' align="left" color={'#fff'} >30€ EURO or 35$ USD</Typography>
+    </Grid>
+)}
 
 function RentFlight() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
