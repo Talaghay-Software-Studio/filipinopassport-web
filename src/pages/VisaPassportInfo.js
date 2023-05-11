@@ -15,9 +15,9 @@ function TitleHeader(){
   
   return (
     <Grid item>
-      <p style={{ ...titleStyles, marginTop: '64px', marginBottom: '1px' }}>Travel Requirements</p>
-          <p style={{ ...headingStyles, }}>Traveling to {destination} </p>
-          <p style={{ ...descriptionStyles, marginTop: '24px',marginBottom: '64px' }}>
+      <p style={{ ...titleStyles, marginTop: '64px' }}>Travel Requirements</p>
+          <p style={{ ...headingStyles,  marginTop: '18px', }}>Traveling to {destination} </p>
+          <p style={{ ...descriptionStyles, marginTop: '32px',marginBottom: '64px' }}>
           Requirements for Philippines Passport Holder
           </p>
     </Grid>

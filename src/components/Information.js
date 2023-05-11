@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -14,6 +14,12 @@ export default function Information() {
 	const navigate = useNavigate()
     const requirements = useSelector((state) => state.requirements.requirements);
     const destination = useSelector((state) => state.destination.destination);
+
+    useEffect(() => {
+      if (destination === null) {
+        navigate('/');
+      }
+    }, [destination, navigate]);
 
     function renderText(requirements) {
         let textToRender;
@@ -49,9 +55,9 @@ export default function Information() {
     <ThemeProvider theme={theme} >
       <Grid item >
         <Paper elevation={24} variant="outlined" align="center"  sx={{ p: 2, 
-    marginTop: 8, width: '80vw', borderRadius: 4,  minWidth: '80vw' }}>
+    marginTop: 8, width: '80vw', borderRadius: 4,  minWidth: '90vw' }}>
         <Box sx={{
-    width: 400,
+    width: 325,
     height: 60,
     backgroundColor: 'orangered',
     marginTop: -5,
@@ -59,7 +65,7 @@ export default function Information() {
     borderRadius: 4,
   }} 
   > 
-  <Typography component="h3" variant="h5" align="center" color={'white'} >
+  <Typography component="h5" variant="button" align="center" color={'white'} >
   Here are the things you need  </Typography>
   </Box>
   <Grid
@@ -84,7 +90,7 @@ export default function Information() {
 
 <Grid item>
   <Paper elevation={24} variant="outlined" align="center"  sx={{ p: 2, 
-    marginTop: 2, width: '80vw', borderRadius: 4, minWidth: '80vw' }}>
+    marginTop: 2, width: '80vw', borderRadius: 4, minWidth: '90vw' }}>
      <Grid
       container
       direction="column"
