@@ -7,6 +7,7 @@ import Flags_Background from '../images/Flags_Background.jpg'
 import { Box, Grid, Paper } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Information from '../components/Information';
+import Services from '../pages/Services'
 import { useSelector } from 'react-redux';
 
 
@@ -16,10 +17,10 @@ function TitleHeader(){
   return (
     <Grid item>
       <p style={{ ...titleStyles, marginTop: '64px' }}>Travel Requirements</p>
-          <p style={{ ...headingStyles,  marginTop: '18px', }}>Traveling to {destination} </p>
-          <p style={{ ...descriptionStyles, marginTop: '32px',marginBottom: '64px' }}>
-          Requirements for Philippines Passport Holder
-          </p>
+      <p style={{ ...headingStyles,  marginTop: '18px', }}>Traveling to {destination} </p>
+      <p style={{ ...descriptionStyles, marginTop: '32px',marginBottom: '64px' }}>
+      Requirements for Philippines Passport Holder
+      </p>
     </Grid>
   )
 }
@@ -56,7 +57,7 @@ function VisaPassportInfo() {
     <Grid container sx={{display:'flex',height:'100%',flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', backgroundColor: `rgba(0, 0, 0, 0.24)`}}>
       <Box sx={{width: '100%',height: '100%',}}>
        <Grid item width={'100vw'}>
-          <Paper elevation={3} square sx={{ backgroundColor: `rgba(0, 0, 0, 0.55)` ,}} > 
+          <Paper elevation={3} square sx={{ backgroundColor: `rgba(0, 0, 0, 0.42)` ,}} > 
           <Navbar />
           </Paper>
       </Grid>
