@@ -115,7 +115,7 @@ export default function Checkout() {
     borderRadius: 4,
     paddingTop: 1
   }}> 
-  <Typography component="h3" variant="h5" align="center" color={'white'} >
+  <Typography component="h5" variant="h5" align="center" color={'white'} >
   Flight Rental Reservation
   </Typography>
   </Box>

@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import RentFlight from './pages/RentFlight';
 import VisaPassportInfo from './pages/VisaPassportInfo';
 import Services from './pages/Services';
-import VisaBundle from './pages/VisaBundle';
+import VisaBundle from './pages/VisaBundleComponents/VisaBundle';
 import LetterWriting from './pages/LetterWriting';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';

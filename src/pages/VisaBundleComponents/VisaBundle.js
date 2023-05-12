@@ -1,10 +1,11 @@
-import '../App.css';
+import '../../App.css';
 import React, {useState, useEffect} from 'react'
-import Navbar from "../NavBar";
-import Footer from '../Footer';
+import Navbar from "../../NavBar";
+import Footer from '../../Footer';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import visabundle from '../images/visabundle.jpg'
+import visabundle from '../../images/visabundle.jpg'
+import Checkout from './Checkout';
 
 function VisaBundle() {
   return (
@@ -78,7 +79,7 @@ function VisaBundle() {
         </Grid>
        
 {/* 3rd */}
-        <Grid item >
+        <Grid item mb={8} >
           <Typography variant='h4' color={'#136172'} gutterBottom mx={8}> <strong>WHAT ARE THE IMPORTANT DETAILS TO KNOW?</strong></Typography>
           <Typography variant='h6' align='left' mx={8} mb={2}> The Visa Application Bundle Service cost will depend on how many days you’d want to receive all the documents. It will take us up 2 weeks to prepare, process, and finalize documents from our side after you send the information and documents required from you.
           </Typography>
@@ -92,6 +93,15 @@ function VisaBundle() {
           </Typography>
         </Grid>
 
+        <Grid item mb={8}> 
+        <Box sx={{width: '100%', height: 2, backgroundColor: 'white'}}/>
+        </Grid>
+       
+{/* 4th */}
+        <Grid item >
+          <Typography variant='h4' color={'#136172'} gutterBottom mb={4} mx={8}> <strong>HOW TO AVAIL OUR VISA APPLICATION BUNDLE SERVICES?</strong></Typography>
+       <Checkout />
+        </Grid>
         <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>
