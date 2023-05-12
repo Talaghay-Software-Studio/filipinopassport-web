@@ -5,8 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useDispatch } from 'react-redux';
-import {updateSelectedVisa, updateSelectedSponsor} from '../../components/store'
-
+import {updateSelectedVisa, updateSelectedSponsor, updateSelectedBundle, updateSelectedAdditional} from '../../components/store'
 
 export function SelectVisa() {
   const [selectedVisa, setSelectedVisa] = useState(null)
@@ -68,6 +67,71 @@ export function SelectSponsor() {
         >
           <MenuItem value={'Self Sponsored'}>Self Sponsored</MenuItem>
           <MenuItem value={'Someone Else'}>Someone Else</MenuItem>
+        </Select>
+      </FormControl>
+    );
+  }
+
+  export function SelectBundle() {
+    const [selectedBundle, setSelectedBundle] = useState(null)
+    const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updateSelectedBundle(selectedBundle));
+
+  }, [ selectedBundle, dispatch]);
+
+    return (
+      <FormControl sx={{ minWidth: 230 }} size="medium" fullWidth>
+        <InputLabel id="Bundle">Select Bundle</InputLabel>
+        <Select
+          labelId="Bundle"
+          id="Bundle"
+          value={selectedBundle}
+          label="selectedBundle"
+          onChange={(event) => {
+            setSelectedBundle(event.target.value);
+          }}
+        >
+          <MenuItem value={'Bundle A'}>Bundle A</MenuItem>
+          <MenuItem value={'Bundle B'}>Bundle B</MenuItem>
+          <MenuItem value={'Bundle C'}>Bundle C</MenuItem>
+
+        </Select>
+      </FormControl>
+    );
+  }
+
+  export function SelectAdditional() {
+    const [selectedAdditional, setSelectedAdditional] = useState(null)
+    const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updateSelectedAdditional(selectedAdditional));
+
+  }, [ selectedAdditional, dispatch]);
+
+    return (
+      <FormControl sx={{ minWidth: 230 }} size="medium" fullWidth>
+        <InputLabel id="Additional">Additional Leg</InputLabel>
+        <Select
+          labelId="Additional"
+          id="Additional"
+          value={selectedAdditional}
+          label="setSelectedAdditional"
+          onChange={(event) => {
+            setSelectedAdditional(event.target.value);
+          }}
+        >
+          <MenuItem value={0}>None</MenuItem>
+          <MenuItem value={1}>1</MenuItem>
+          <MenuItem value={2}>2</MenuItem>
+          <MenuItem value={3}>3</MenuItem>
+          <MenuItem value={4}>4</MenuItem>
+          <MenuItem value={5}>5</MenuItem>
+          <MenuItem value={6}>6</MenuItem>
+          <MenuItem value={7}>7</MenuItem>
+
         </Select>
       </FormControl>
     );

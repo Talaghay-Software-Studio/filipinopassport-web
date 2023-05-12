@@ -51,25 +51,28 @@ export default function Checkout() {
   const formattedStartDate = dayjs(startDate).format('MMMM D, YYYY');
   const endDate = useSelector((state) => state.endDate.endDate);
   const formattedEndDate = dayjs(endDate).format('MMMM D, YYYY');
+  const selectedAdditional = useSelector((state) => state.selectedAdditional);
+  const selectedBundle = useSelector((state) => state.selectedBundle);
 
-
-
+  
   const handleNext = () => {
     setActiveStep(activeStep + 1);
-    alert(`Start Date: ${formattedStartDate}`)
-    alert(`End Date: ${formattedEndDate}`)
-    alert(`Selected Sponsor: ${selectedSponsor}`)
-    alert(`Selected Visa: ${selectedVisa}`)
-    alert(`deliveryEmailAddress: ${deliveryEmailAddress}`)
-    alert(`travelerName: ${travelerName}`)
-    alert(`Sponsor Background: ${sponsorBackground}`);
-    alert(`Companion: ${companion}`);
-    alert(`Visiting Country: ${visitingCountry}`);
-    alert(`Daily Budget: ${dailyBudget}`);
-    alert(`Entire Budget: ${entireBudget}`);
-    alert(`WhatsApp Info: ${whatsappInfo}`);
-    alert(`Facebook Info: ${facebookInfo}`);
-    alert(`Background Info: ${backgroundInfo}`);
+    alert(`Selected Bundle: ${selectedBundle}`)
+    alert(`Additional: ${selectedAdditional}`)
+    // alert(`Start Date: ${formattedStartDate}`)
+    // alert(`End Date: ${formattedEndDate}`)
+    // alert(`Selected Sponsor: ${selectedSponsor}`)
+    // alert(`Selected Visa: ${selectedVisa}`)
+    // alert(`deliveryEmailAddress: ${deliveryEmailAddress}`)
+    // alert(`travelerName: ${travelerName}`)
+    // alert(`Sponsor Background: ${sponsorBackground}`);
+    // alert(`Companion: ${companion}`);
+    // alert(`Visiting Country: ${visitingCountry}`);
+    // alert(`Daily Budget: ${dailyBudget}`);
+    // alert(`Entire Budget: ${entireBudget}`);
+    // alert(`WhatsApp Info: ${whatsappInfo}`);
+    // alert(`Facebook Info: ${facebookInfo}`);
+    // alert(`Background Info: ${backgroundInfo}`);
   };
 
   const handleBack = () => {

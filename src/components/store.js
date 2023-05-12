@@ -23,6 +23,8 @@ const initialState = {
   flightDate: null,
   totalAmount: null,
   referenceNumber: null,
+  selectedBundle: null,
+  selectedAdditional: null,
 };
 
 
@@ -226,6 +228,26 @@ const selectedSponsorSlice = createSlice({
   },
 });
 
+const selectedBundleSlice = createSlice({
+  name: 'selectedBundle',
+  initialState: null,
+  reducers: {
+    updateSelectedBundle: (state, action) => {
+      return action.payload;
+    },
+  },
+});
+
+const selectedAdditionalSlice = createSlice({
+  name: 'selectedAdditional',
+  initialState: null,
+  reducers: {
+    updateSelectedAdditional: (state, action) => {
+      return action.payload;
+    },
+  },
+});
+
 const store = configureStore({
   reducer: {
     requirements: requirementsSlice.reducer,
@@ -248,6 +270,8 @@ const store = configureStore({
     selectedSponsor: selectedSponsorSlice.reducer,
     startDate: startDateSlice.reducer,
     endDate: endDateSlice.reducer,
+    selectedBundle: selectedBundleSlice.reducer,
+    selectedAdditional: selectedAdditionalSlice.reducer,
   },
 });
 
@@ -271,6 +295,9 @@ export const { updateSelectedVisa } = selectedVisaSlice.actions;
 export const { updateSelectedSponsor } = selectedSponsorSlice.actions;
 export const { updateStartDate } = startDateSlice.actions;
 export const { updateEndDate } = endDateSlice.actions;
+export const { updateSelectedBundle } = selectedBundleSlice.actions;
+export const { updateSelectedAdditional } = selectedAdditionalSlice.actions;
+
 
 export const selectEndDate = (state) => state.endDate.endDate;
 export const selectStartDate = (state) => state.startDate.startDate;
