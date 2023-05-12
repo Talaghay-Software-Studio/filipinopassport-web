@@ -31,7 +31,7 @@ function VisaBundle() {
         <strong>VISA APPLICATION BUNDLE SERVICE </strong></Typography>
         <Typography variant='h7' color={'#fff'} mb={3}> 
         Applicable for Tourist Visa Applications to USA, Canada, Europe, Australia, South Africa, China and other countries.</Typography>
-        <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}}>
+        <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}} gutterBottom>
         AVAIL NOW </Button>
         </Grid>
         </Grid>
