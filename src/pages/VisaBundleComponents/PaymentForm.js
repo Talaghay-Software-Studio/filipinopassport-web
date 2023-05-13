@@ -5,24 +5,28 @@ import Box from '@mui/material/Box';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { SelectBundle, SelectAdditional } from './Selections';
+import { updateTotalAmountVisaBundle } from '../../components/store';
 
 
 export default function PaymentForm() {
   const dispatch = useDispatch();
   const selectedAdditional = useSelector((state) => state.selectedAdditional);
   const selectedBundle = useSelector((state) => state.selectedBundle);
-  
-  const [totalAmountVisaBundle, setTotalAmountVisaBundle] = useState(0);
+  const TotalAmountVisaBundle = useSelector((state) => state.totalAmountVisaBundle);
 
   useEffect(() => {
+    let updatedTotalAmountVisaBundle = 0;
+  
     if (selectedBundle === 'Bundle A') {
-      setTotalAmountVisaBundle(selectedAdditional * 150 + 460);
+      updatedTotalAmountVisaBundle = selectedAdditional * 150 + 460;
     } else if (selectedBundle === 'Bundle B') {
-      setTotalAmountVisaBundle(selectedAdditional * 150 + 400);
+      updatedTotalAmountVisaBundle = selectedAdditional * 150 + 400;
     } else if (selectedBundle === 'Bundle C') {
-      setTotalAmountVisaBundle(selectedAdditional * 150 + 315);
+      updatedTotalAmountVisaBundle = selectedAdditional * 150 + 320;
     }
-  }, [selectedBundle, selectedAdditional]);
+  
+    dispatch(updateTotalAmountVisaBundle(updatedTotalAmountVisaBundle));
+  }, [selectedBundle, selectedAdditional, dispatch]);
 
   return (
     
@@ -56,7 +60,7 @@ export default function PaymentForm() {
         <Grid container alignItems="center">
           <Grid item xs >
             <Typography gutterBottom variant="h6" component="div">
-              Total: <strong>${totalAmountVisaBundle}</strong> 
+              Total: <strong>${TotalAmountVisaBundle.toString()}</strong> 
             </Typography>
           </Grid>
           <Box
@@ -68,7 +72,7 @@ export default function PaymentForm() {
 />
         </Grid>
         <Typography color="text.secondary" variant="body2" marginTop={1}>
-        Kindly ensure that you pay the correct amount of <strong>${totalAmountVisaBundle}</strong>  using the payment partners on the next step. Thank you!  
+        Kindly ensure that you pay the correct amount of <strong>${TotalAmountVisaBundle.toString()}</strong>  using the payment partners on the next step. Thank you!  
         </Typography>
       </Box>
     </Box>

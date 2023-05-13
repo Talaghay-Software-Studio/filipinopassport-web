@@ -25,6 +25,7 @@ const initialState = {
   referenceNumber: null,
   selectedBundle: null,
   selectedAdditional: null,
+  totalAmountVisaBundle: null,
 };
 
 
@@ -248,6 +249,17 @@ const selectedAdditionalSlice = createSlice({
   },
 });
 
+const totalAmountVisaBundleSlice = createSlice({
+  name: 'totalAmountVisaBundle',
+  initialState,
+  reducers: {
+    updateTotalAmountVisaBundle: (state, action) => {
+      return action.payload;
+    },
+  },
+});
+
+
 const store = configureStore({
   reducer: {
     requirements: requirementsSlice.reducer,
@@ -272,6 +284,7 @@ const store = configureStore({
     endDate: endDateSlice.reducer,
     selectedBundle: selectedBundleSlice.reducer,
     selectedAdditional: selectedAdditionalSlice.reducer,
+    totalAmountVisaBundle: totalAmountVisaBundleSlice.reducer,
   },
 });
 
@@ -297,6 +310,7 @@ export const { updateStartDate } = startDateSlice.actions;
 export const { updateEndDate } = endDateSlice.actions;
 export const { updateSelectedBundle } = selectedBundleSlice.actions;
 export const { updateSelectedAdditional } = selectedAdditionalSlice.actions;
+export const { updateTotalAmountVisaBundle } = totalAmountVisaBundleSlice.actions;
 
 
 export const selectEndDate = (state) => state.endDate.endDate;
