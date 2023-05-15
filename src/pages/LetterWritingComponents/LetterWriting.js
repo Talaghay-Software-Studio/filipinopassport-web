@@ -1,10 +1,11 @@
-import '../App.css';
+import '../../App.css';
 import React, {useState, useEffect} from 'react'
-import Navbar from "../NavBar";
-import Footer from '../Footer';
+import Navbar from "../../NavBar";
+import Footer from '../../Footer';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import letterwriting from '../images/letterwriting.jpg'
+import letterwriting from '../../images/letterwriting.jpg'
+import Checkout from './Checkout';
 
 function VisaBundle() {
   return (
@@ -100,7 +101,9 @@ function VisaBundle() {
           
           </Typography>
         </Grid>
-
+        <Grid item>
+          <Checkout />
+        </Grid>
         <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>

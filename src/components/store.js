@@ -26,8 +26,63 @@ const initialState = {
   selectedBundle: null,
   selectedAdditional: null,
   totalAmountVisaBundle: null,
+  situationInfo: null,
+  firstName: null,
+  lastName: null,
+  personName: null,
+  selectedService: null,
+  submitDate: null,
 };
 
+const selectedServiceSlice = createSlice({
+  name: 'selectedService',
+  initialState,
+  reducers: {
+    updateselectedService: (state, action) => {
+      state.selectedService = action.payload;
+    },
+  },
+});
+
+const personNameSlice = createSlice({
+  name: 'personName',
+  initialState,
+  reducers: {
+    updatepersonName: (state, action) => {
+      state.personName = action.payload;
+    },
+  },
+});
+
+const situationInfoSlice = createSlice({
+  name: 'situationInfo',
+  initialState,
+  reducers: {
+    updateSituationInfo: (state, action) => {
+      state.situationInfo = action.payload;
+    },
+  },
+});
+
+const firstNameSlice = createSlice({
+  name: 'firstName',
+  initialState,
+  reducers: {
+    updatefirstName: (state, action) => {
+      state.firstName = action.payload;
+    },
+  },
+});
+
+const lastNameSlice = createSlice({
+  name: 'lastName',
+  initialState,
+  reducers: {
+    updatelastName: (state, action) => {
+      state.lastName = action.payload;
+    },
+  },
+});
 
 const referenceNumberSlice = createSlice({
   name: 'referenceNumber',
@@ -58,6 +113,17 @@ const flightDateSlice = createSlice({
     },
   },
 });
+
+const submitDateSlice = createSlice({
+  name: 'submitDate',
+  initialState,
+  reducers: {
+    updatesubmitDate: (state, action) => {
+      state.submitDate = action.payload;
+    },
+  },
+});
+
 
 const startDateSlice = createSlice({
   name: 'startDate',
@@ -285,9 +351,18 @@ const store = configureStore({
     selectedBundle: selectedBundleSlice.reducer,
     selectedAdditional: selectedAdditionalSlice.reducer,
     totalAmountVisaBundle: totalAmountVisaBundleSlice.reducer,
+    situationInfo: situationInfoSlice.reducer,
+    firstName: firstNameSlice.reducer,
+    lastName: lastNameSlice.reducer,
+    personName: personNameSlice.reducer,
+    selectedService: selectedServiceSlice.reducer,
+    submitDate: submitDateSlice.reducer,
   },
 });
 
+export const { updatesubmitDate } = submitDateSlice.actions;
+export const { updateselectedService } = selectedServiceSlice.actions;
+export const { updatepersonName } = personNameSlice.actions;
 export const { updateRequirements } = requirementsSlice.actions;
 export const { updateDestination } = destinationSlice.actions;
 export const { updatedeliveryEmailAddress } = deliveryEmailAddressSlice.actions;
@@ -311,8 +386,11 @@ export const { updateEndDate } = endDateSlice.actions;
 export const { updateSelectedBundle } = selectedBundleSlice.actions;
 export const { updateSelectedAdditional } = selectedAdditionalSlice.actions;
 export const { updateTotalAmountVisaBundle } = totalAmountVisaBundleSlice.actions;
+export const { updateSituationInfo } = situationInfoSlice.actions;
+export const { updatefirstName } = firstNameSlice.actions;
+export const { updatelastName } = lastNameSlice.actions;
 
-
+export const submitDate = (state) => state.submitDate.submitDate;
 export const selectEndDate = (state) => state.endDate.endDate;
 export const selectStartDate = (state) => state.startDate.startDate;
 export const selectflightDate = (state) => state.flightDate.flightDate;
