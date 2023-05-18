@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef, } from 'react'
 import Navbar from "../../NavBar";
 import Footer from '../../Footer';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
@@ -8,6 +8,11 @@ import letterwriting from '../../images/letterwriting.jpg'
 import Checkout from './Checkout';
 
 function VisaBundle() {
+  const checkoutRef = useRef(null);
+
+  const handleAvailNowClick = () => {
+    checkoutRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="Page">
    <React.Fragment>
@@ -32,8 +37,9 @@ function VisaBundle() {
         <strong> PERSONALIZED COVER LETTER AND INVITATION LETTER WRITING SERVICE </strong></Typography>
         <Typography variant='h7' color={'#fff'} mb={3}> 
         for visa applications</Typography>
-        <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}}>
-        AVAIL NOW </Button>
+        <Button variant="contained" textSizeSmall sx={{ borderRadius: 4, backgroundColor: 'orangered' }} onClick={handleAvailNowClick}>
+                  AVAIL NOW
+                </Button>
         </Grid>
         </Grid>
 
@@ -88,8 +94,8 @@ function VisaBundle() {
         </Grid>
        
 {/* 3rd */}
-        <Grid item >
-          <Typography variant='h4' color={'#136172'} gutterBottom mx={8}> <strong>WHAT ARE THE IMPORTANT DETAILS TO KNOW?</strong></Typography>
+        <Grid item ref={checkoutRef}>
+        <Typography variant='h4' color={'#136172'} gutterBottom mx={8}> <strong>WHAT ARE THE IMPORTANT DETAILS TO KNOW?</strong></Typography>
           <Typography variant='h6' align='left' mx={8} mb={2}> The Visa Application Bundle Service cost will depend on how many days you’d want to receive all the documents. It will take us up 2 weeks to prepare, process, and finalize documents from our side after you send the information and documents required from you.
           </Typography>
           <Typography component="ul" variant="body1" align='left' mx={10}>
@@ -100,8 +106,6 @@ function VisaBundle() {
 
           
           </Typography>
-        </Grid>
-        <Grid item>
           <Checkout />
         </Grid>
         <Stack item marginTop={'100vh'}>

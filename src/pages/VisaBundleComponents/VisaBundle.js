@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Navbar from "../../NavBar";
 import Footer from '../../Footer';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
@@ -8,6 +8,12 @@ import visabundle from '../../images/visabundle.jpg'
 import Checkout from './Checkout';
 
 function VisaBundle() {
+  
+  const checkoutRef = useRef(null);
+
+  const handleAvailNowClick = () => {
+    checkoutRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="Page">
    <React.Fragment>
@@ -32,8 +38,9 @@ function VisaBundle() {
         <strong>VISA APPLICATION BUNDLE SERVICE </strong></Typography>
         <Typography variant='h7' color={'#fff'} mb={3}> 
         Applicable for tourist visa applications to USA, Canada, Europe, Australia, South Africa, China and other countries.</Typography>
-        <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}} gutterBottom>
-        AVAIL NOW </Button>
+        <Button variant="contained" textSizeSmall sx={{ borderRadius: 4, backgroundColor: 'orangered' }} onClick={handleAvailNowClick}>
+                  AVAIL NOW
+                </Button>
         </Grid>
         </Grid>
 
@@ -98,10 +105,11 @@ function VisaBundle() {
         </Grid>
        
 {/* 4th */}
-        <Grid item >
-          <Typography variant='h4' color={'#136172'} gutterBottom mb={4} mx={8}> <strong>HOW TO AVAIL OUR VISA APPLICATION BUNDLE SERVICES?</strong></Typography>
-       <Checkout />
+      <Grid item ref={checkoutRef}>
+        <Typography variant='h4' color={'#136172'} gutterBottom mb={4} mx={8}> <strong>HOW TO AVAIL OUR VISA APPLICATION BUNDLE SERVICES?</strong></Typography>
+          <Checkout />
         </Grid>
+        
         <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>

@@ -1,5 +1,5 @@
 import '../../App.css';
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Navbar from "../../NavBar";
 import Footer from '../../Footer';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
@@ -8,6 +8,11 @@ import letterwriting from '../../images/letterwriting.jpg'
 import Checkout from './Checkout';
 
 function RentFlight() {
+  const checkoutRef = useRef(null);
+
+  const handleAvailNowClick = () => {
+    checkoutRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="Page">
    <React.Fragment>
@@ -32,8 +37,9 @@ function RentFlight() {
         <strong> RENT A FLIGHT SERVICE </strong></Typography>
         <Typography variant='h7' color={'#fff'} mb={3}> 
         For your visa applications in Canada, Europe, USA, Australia, Japan, South Korea and many more!</Typography>
-        <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}}>
-        AVAIL NOW </Button>
+        <Button variant="contained" textSizeSmall sx={{ borderRadius: 4, backgroundColor: 'orangered' }} onClick={handleAvailNowClick}>
+                  AVAIL NOW
+                </Button>
         </Grid>
         </Grid>
 
@@ -76,14 +82,12 @@ function RentFlight() {
         <Grid item mb={8}> 
         <Box sx={{width: '100%', height: 2, backgroundColor: 'white'}}/>
         </Grid>
-       
-{/* 3rd */}
-        <Grid item >
-          <Typography variant='h4' color={'#136172'} gutterBottom mx={8}> <strong>HOW TO AVAIL OUR RENT A FLIGHT SERVICE?</strong></Typography>
-        </Grid>
-        <Grid item>
-          <Checkout />
-        </Grid>
+        
+        <Grid item ref={checkoutRef}>
+        <Typography variant='h4' color={'#136172'} gutterBottom mx={8}> <strong>HOW TO AVAIL OUR RENT A FLIGHT SERVICE?</strong></Typography>
+              <Checkout />
+            </Grid>
+
         <Stack item marginTop={'100vh'}>
           <Footer />
         </Stack>
