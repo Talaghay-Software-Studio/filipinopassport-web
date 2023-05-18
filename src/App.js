@@ -2,7 +2,7 @@ import './App.css';
 import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Home from './pages/Home'
-import RentFlight from './pages/RentFlight';
+import RentFlight from './pages/RentFlightComponents/RentFlight';
 import VisaPassportInfo from './pages/VisaPassportInfo';
 import Services from './pages/Services';
 import VisaBundle from './pages/VisaBundleComponents/VisaBundle';

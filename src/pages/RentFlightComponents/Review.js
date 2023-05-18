@@ -7,11 +7,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { updatereferenceNumber} from './store';
-import bdo from '../images/bdo.jpg'
-import bpi from '../images/bpi.png'
-import Paypal from '../images/Paypal.png'
-import westernunion from '../images/westernunion.png'
+import { updatereferenceNumber} from '../../components/store';
 
 export default function Review() {
   const [referenceNumber, setReferenceNumber] = useState(null);
@@ -36,7 +32,7 @@ export default function Review() {
         <Card sx={{ maxWidth: 150, marginLeft: 2, marginTop: 2  }}>
       <CardActionArea>
       <CardMedia
-         image={require('../images/bdo.jpg')} // require image
+         image={require('../../images/bdo.jpg')} // require image
          title="Contemplative Reptile"
          style={styles.mediaBank} // specify styles
             />
@@ -55,7 +51,7 @@ export default function Review() {
         <Card sx={{ maxWidth: 150, marginTop: 2    }}>
       <CardActionArea>
       <CardMedia
-         image={require('../images/bpi.png')} // require image
+         image={require('../../images/bpi.png')} // require image
          title="Contemplative Reptile"
          style={styles.mediaBank} // specify styles
             />
@@ -74,7 +70,7 @@ export default function Review() {
         <Card sx={{ maxWidth: 150, marginTop: 2,  marginLeft: 2 }}>
       <CardActionArea>
       <CardMedia
-         image={require('../images/Paypal.png')} // require image
+         image={require('../../images/Paypal.png')} // require image
          title="Contemplative Reptile"
          style={styles.mediaPaypal} // specify styles
             />
@@ -93,7 +89,7 @@ export default function Review() {
         <Card sx={{ maxWidth: 150, marginTop: 2, }}>
       <CardActionArea>
       <CardMedia
-         image={require('../images/westernunion.png')} // require image
+         image={require('../../images/westernunion.png')} // require image
          title="Contemplative Reptile"
          style={styles.mediaPaypal} // specify styles
             />

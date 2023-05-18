@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import SelectQuantity from './SelectQuantity';
 import SelectType from './SelectType';
 import Box from '@mui/material/Box';
-import { updatetotalAmount } from './store';
+import { updatetotalAmount } from '../../components/store';
 import { useDispatch } from 'react-redux';
 
 

@@ -2,7 +2,7 @@ import React, { Component, useState, useRef, useContext, useEffect } from 'react
 import Select from 'react-select';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom'
-import { Countries } from './Countries';
+import { Countries } from '../pages/RentFlightComponents/Countries';
 import { useDispatch } from 'react-redux';
 import { updateRequirements, updateDestination } from './store';
 

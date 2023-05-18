@@ -31,7 +31,7 @@ function VisaBundle() {
         <Typography variant='h3' color={'#fff'} mt={0}>
         <strong> PERSONALIZED COVER LETTER AND INVITATION LETTER WRITING SERVICE </strong></Typography>
         <Typography variant='h7' color={'#fff'} mb={3}> 
-        for Visa Applications</Typography>
+        for visa applications</Typography>
         <Button variant="contained" textSizeSmall sx={{borderRadius: 4, backgroundColor: 'orangered'}}>
         AVAIL NOW </Button>
         </Grid>

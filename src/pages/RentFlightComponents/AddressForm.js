@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from 'react-redux';
-import { updatedeliveryEmailAddress, updatetravelerName, updatetravelerFlightDetails, updateflightDate} from './store';
+import { updatedeliveryEmailAddress, updatetravelerName, updatetravelerFlightDetails, updateflightDate} from '../../components/store';
 import DatePickerValue from './Datepicker';
 
 export default function AddressForm() {
