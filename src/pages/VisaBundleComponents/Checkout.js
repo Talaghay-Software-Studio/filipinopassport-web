@@ -119,7 +119,7 @@ export default function Checkout() {
         body: emailParams.body,
         name: emailParams.name
       },
-      'Ng4VM8Cb1b78fOxtA'
+      'Riq3b-AWBAXkGxUju'
     ).then((result) => {
       console.log(result.text);
       // alert('Email sent successfully!');

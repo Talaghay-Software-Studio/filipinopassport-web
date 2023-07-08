@@ -78,13 +78,13 @@ export default function Checkout() {
         body: emailParams.body,
         name: emailParams.name
       },
-      'Ng4VM8Cb1b78fOxtA'
+      'Riq3b-AWBAXkGxUju'
     ).then((result) => {
       console.log(result.text);
       // alert('Email sent successfully!');
       setActiveStep(activeStep + 1)
     }, (error) => {
-      console.log(error.text);
+      alert(error.text);
       alert('An error occurred, please try again later.');
     });
   };
